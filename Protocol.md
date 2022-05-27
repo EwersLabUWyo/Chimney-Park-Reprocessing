@@ -28,9 +28,9 @@ the the FIRST line of the file.
 
 ### Steps 
 1. Select Card Drive...: select the "Fast" directory for the site of
-    interest (`./Data/<site>/Fast`). 
+    interest (`./Data/<site>/Fast/<height>`). 
 2. Change Output Dir...: select
-    the "Converted" directory within the `./EC Processing/<site>/Converted`
+    the "Converted" directory within the `./EC Processing/<site>/<Fast>/<Height>/Converted`
 3. Destination File Options...: 
 	* File Format: ASCII Table Data
     (TOA5) 
@@ -61,17 +61,10 @@ following can be seen
 * the number of lines in the file is less than expected
 
 The Use the python JupyterNotebook to fix these. This will open up each file, then
-* add any missing timestamps
+* combine files into a seamless timeseries of 30 minute files
 * populate any missing or inmvalid values with "NAN"
-* standardize the header as follows: * Line 1: TOA5 header line containing the
-  file format (TOA5), the datalogger ID and OS, the datalogger program, and
-  some other information like the table name. * Line 2: Column headers,
-  ordered as `Timestamp, Record, U, V, W, Ts, Diag_sonic, CO2, H2O, Pressure,
-  Diag_IRGA`. If additional instruments are present, the following order is
-  obeyed: `Timestamp, Record, Sonic_1, ..., Sonic_n, IRGA_1, ..., IRGA_n` *
-  Line 3: Units, with wind velocity as m/s, temperature as deg C, CO2 density
-  as mg m-3, and H20 density as g m-3 * Line 4: type of record, usually "Smp"
-  for "Sample"
+* extract save the campbell TOA5 header metadata 
+* flux report summary statistics
 
 Note that EddyPro doesn't actually care about header names, just the number of
 lines. This re-organization is for consistancy only.
