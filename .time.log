@@ -1,0 +1,931 @@
+INFO    __main__timer    222    Found fast files in 845.4148339999961ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 2.457115999987991ms. Total time elapsed: 0.8584825309999928s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07049699999583936ms
+INFO    __main__timer    222    Found fast files in 587.4502450000136ms
+INFO    __main__timer    222    Found fast files in 587.4502450000136ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 0.9180790000016259ms. Total time elapsed: 0.5896759230000157s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 0.9180790000016259ms. Total time elapsed: 0.5896759230000157s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05892900000503687ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05892900000503687ms
+INFO    __main__timer    411    Read in data file in 79.90261800000553ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    411    Read in data file in 79.90261800000553ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    222    Found fast files in 534.0490610000188ms
+INFO    __main__timer    222    Found fast files in 534.0490610000188ms
+INFO    __main__timer    222    Found fast files in 534.0490610000188ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 1.0216320000040469ms. Total time elapsed: 0.5366298690000235s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 1.0216320000040469ms. Total time elapsed: 0.5366298690000235s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 1.0216320000040469ms. Total time elapsed: 0.5366298690000235s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05144299996118207ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05144299996118207ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05144299996118207ms
+INFO    __main__timer    409    Read in data file in 75.89602799998829ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 75.89602799998829ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 75.89602799998829ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    222    Found fast files in 643.9209739999683ms
+INFO    __main__timer    222    Found fast files in 643.9209739999683ms
+INFO    __main__timer    222    Found fast files in 643.9209739999683ms
+INFO    __main__timer    222    Found fast files in 643.9209739999683ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 0.9511560000419195ms. Total time elapsed: 0.646227974999988s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 0.9511560000419195ms. Total time elapsed: 0.646227974999988s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 0.9511560000419195ms. Total time elapsed: 0.646227974999988s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:00:00 in 0.9511560000419195ms. Total time elapsed: 0.646227974999988s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04411899999468005ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04411899999468005ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04411899999468005ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04411899999468005ms
+INFO    __main__timer    409    Read in data file in 186.3675739999735ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 186.3675739999735ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 186.3675739999735ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 186.3675739999735ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 221.66211199998997ms
+INFO    __main__timer    291    Processed file in 221.66211199998997ms
+INFO    __main__timer    291    Processed file in 221.66211199998997ms
+INFO    __main__timer    291    Processed file in 221.66211199998997ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.12327300004244535ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.12327300004244535ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.12327300004244535ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.12327300004244535ms
+INFO    __main__timer    409    Read in data file in 166.3302700000031ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 166.3302700000031ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 166.3302700000031ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 166.3302700000031ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 203.8762610000049ms
+INFO    __main__timer    291    Processed file in 203.8762610000049ms
+INFO    __main__timer    291    Processed file in 203.8762610000049ms
+INFO    __main__timer    291    Processed file in 203.8762610000049ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0000.csv in 355.8625850000112ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0000.csv in 355.8625850000112ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0000.csv in 355.8625850000112ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0000.csv in 355.8625850000112ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 571.4088440000182ms
+INFO    __main__timer    307    Comleted iteration in 571.4088440000182ms
+INFO    __main__timer    307    Comleted iteration in 571.4088440000182ms
+INFO    __main__timer    307    Comleted iteration in 571.4088440000182ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:30:00 in 2.284745999986626ms. Total time elapsed: 1.4545580439999526s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:30:00 in 2.284745999986626ms. Total time elapsed: 1.4545580439999526s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:30:00 in 2.284745999986626ms. Total time elapsed: 1.4545580439999526s
+INFO    __main__timer    242    Built time index df for 2021-03-12 00:30:00 in 2.284745999986626ms. Total time elapsed: 1.4545580439999526s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0755390000222178ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0755390000222178ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0755390000222178ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0755390000222178ms
+INFO    __main__timer    409    Read in data file in 210.6764060000046ms. Size on disk: 2.39MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 210.6764060000046ms. Size on disk: 2.39MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 210.6764060000046ms. Size on disk: 2.39MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 210.6764060000046ms. Size on disk: 2.39MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 239.4417209999915ms
+INFO    __main__timer    291    Processed file in 239.4417209999915ms
+INFO    __main__timer    291    Processed file in 239.4417209999915ms
+INFO    __main__timer    291    Processed file in 239.4417209999915ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05386599997336816ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05386599997336816ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05386599997336816ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05386599997336816ms
+INFO    __main__timer    409    Read in data file in 165.99835799996754ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 165.99835799996754ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 165.99835799996754ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 165.99835799996754ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 197.3081749999892ms
+INFO    __main__timer    291    Processed file in 197.3081749999892ms
+INFO    __main__timer    291    Processed file in 197.3081749999892ms
+INFO    __main__timer    291    Processed file in 197.3081749999892ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0030.csv in 244.24353599999904ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0030.csv in 244.24353599999904ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0030.csv in 244.24353599999904ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0030.csv in 244.24353599999904ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 459.11470300001156ms
+INFO    __main__timer    307    Comleted iteration in 459.11470300001156ms
+INFO    __main__timer    307    Comleted iteration in 459.11470300001156ms
+INFO    __main__timer    307    Comleted iteration in 459.11470300001156ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:00:00 in 1.4939120000008188ms. Total time elapsed: 2.158680315999959s
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:00:00 in 1.4939120000008188ms. Total time elapsed: 2.158680315999959s
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:00:00 in 1.4939120000008188ms. Total time elapsed: 2.158680315999959s
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:00:00 in 1.4939120000008188ms. Total time elapsed: 2.158680315999959s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06736500000670276ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06736500000670276ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06736500000670276ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06736500000670276ms
+INFO    __main__timer    409    Read in data file in 193.44248900000593ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 193.44248900000593ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 193.44248900000593ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 193.44248900000593ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 220.90513099999498ms
+INFO    __main__timer    291    Processed file in 220.90513099999498ms
+INFO    __main__timer    291    Processed file in 220.90513099999498ms
+INFO    __main__timer    291    Processed file in 220.90513099999498ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472199995892879ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472199995892879ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472199995892879ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472199995892879ms
+INFO    __main__timer    409    Read in data file in 154.28835300002675ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 154.28835300002675ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 154.28835300002675ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 154.28835300002675ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 185.23499100001573ms
+INFO    __main__timer    291    Processed file in 185.23499100001573ms
+INFO    __main__timer    291    Processed file in 185.23499100001573ms
+INFO    __main__timer    291    Processed file in 185.23499100001573ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0100.csv in 240.81817000001138ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0100.csv in 240.81817000001138ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0100.csv in 240.81817000001138ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0100.csv in 240.81817000001138ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 433.8342359999956ms
+INFO    __main__timer    307    Comleted iteration in 433.8342359999956ms
+INFO    __main__timer    307    Comleted iteration in 433.8342359999956ms
+INFO    __main__timer    307    Comleted iteration in 433.8342359999956ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:30:00 in 1.1566000000016174ms. Total time elapsed: 2.818444701999965s
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:30:00 in 1.1566000000016174ms. Total time elapsed: 2.818444701999965s
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:30:00 in 1.1566000000016174ms. Total time elapsed: 2.818444701999965s
+INFO    __main__timer    242    Built time index df for 2021-03-12 01:30:00 in 1.1566000000016174ms. Total time elapsed: 2.818444701999965s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07501399994680469ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07501399994680469ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07501399994680469ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07501399994680469ms
+INFO    __main__timer    409    Read in data file in 195.73097900001812ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 195.73097900001812ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 195.73097900001812ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 195.73097900001812ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 232.96854900002018ms
+INFO    __main__timer    291    Processed file in 232.96854900002018ms
+INFO    __main__timer    291    Processed file in 232.96854900002018ms
+INFO    __main__timer    291    Processed file in 232.96854900002018ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06800099998827136ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06800099998827136ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06800099998827136ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06800099998827136ms
+INFO    __main__timer    409    Read in data file in 155.12908799996694ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 155.12908799996694ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 155.12908799996694ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 155.12908799996694ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 227.1971819999976ms
+INFO    __main__timer    291    Processed file in 227.1971819999976ms
+INFO    __main__timer    291    Processed file in 227.1971819999976ms
+INFO    __main__timer    291    Processed file in 227.1971819999976ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0130.csv in 252.85316899999088ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0130.csv in 252.85316899999088ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0130.csv in 252.85316899999088ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0130.csv in 252.85316899999088ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 490.20900400000755ms
+INFO    __main__timer    307    Comleted iteration in 490.20900400000755ms
+INFO    __main__timer    307    Comleted iteration in 490.20900400000755ms
+INFO    __main__timer    307    Comleted iteration in 490.20900400000755ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:00:00 in 1.2670340000227043ms. Total time elapsed: 3.5478207279999765s
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:00:00 in 1.2670340000227043ms. Total time elapsed: 3.5478207279999765s
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:00:00 in 1.2670340000227043ms. Total time elapsed: 3.5478207279999765s
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:00:00 in 1.2670340000227043ms. Total time elapsed: 3.5478207279999765s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05645000004506073ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05645000004506073ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05645000004506073ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05645000004506073ms
+INFO    __main__timer    409    Read in data file in 197.71143299999494ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 197.71143299999494ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 197.71143299999494ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 197.71143299999494ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 230.6139309999935ms
+INFO    __main__timer    291    Processed file in 230.6139309999935ms
+INFO    __main__timer    291    Processed file in 230.6139309999935ms
+INFO    __main__timer    291    Processed file in 230.6139309999935ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07907200000545345ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07907200000545345ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07907200000545345ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07907200000545345ms
+INFO    __main__timer    409    Read in data file in 148.77409100000705ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 148.77409100000705ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 148.77409100000705ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 148.77409100000705ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 181.82893800002375ms
+INFO    __main__timer    291    Processed file in 181.82893800002375ms
+INFO    __main__timer    291    Processed file in 181.82893800002375ms
+INFO    __main__timer    291    Processed file in 181.82893800002375ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0200.csv in 227.22004899998183ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0200.csv in 227.22004899998183ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0200.csv in 227.22004899998183ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0200.csv in 227.22004899998183ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 419.61436500002947ms
+INFO    __main__timer    307    Comleted iteration in 419.61436500002947ms
+INFO    __main__timer    307    Comleted iteration in 419.61436500002947ms
+INFO    __main__timer    307    Comleted iteration in 419.61436500002947ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:30:00 in 1.361072999998214ms. Total time elapsed: 4.204039539999997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:30:00 in 1.361072999998214ms. Total time elapsed: 4.204039539999997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:30:00 in 1.361072999998214ms. Total time elapsed: 4.204039539999997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 02:30:00 in 1.361072999998214ms. Total time elapsed: 4.204039539999997s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0649919999773374ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0649919999773374ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0649919999773374ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0649919999773374ms
+INFO    __main__timer    409    Read in data file in 190.8766939999964ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 190.8766939999964ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 190.8766939999964ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 190.8766939999964ms. Size on disk: 2.42MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 222.34232099998508ms
+INFO    __main__timer    291    Processed file in 222.34232099998508ms
+INFO    __main__timer    291    Processed file in 222.34232099998508ms
+INFO    __main__timer    291    Processed file in 222.34232099998508ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055856000017229235ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055856000017229235ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055856000017229235ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055856000017229235ms
+INFO    __main__timer    409    Read in data file in 155.65616200001386ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 155.65616200001386ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 155.65616200001386ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 155.65616200001386ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 185.2644360000113ms
+INFO    __main__timer    291    Processed file in 185.2644360000113ms
+INFO    __main__timer    291    Processed file in 185.2644360000113ms
+INFO    __main__timer    291    Processed file in 185.2644360000113ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0230.csv in 238.20200499994826ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0230.csv in 238.20200499994826ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0230.csv in 238.20200499994826ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0230.csv in 238.20200499994826ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 432.4194280000029ms
+INFO    __main__timer    307    Comleted iteration in 432.4194280000029ms
+INFO    __main__timer    307    Comleted iteration in 432.4194280000029ms
+INFO    __main__timer    307    Comleted iteration in 432.4194280000029ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:00:00 in 1.271760000008726ms. Total time elapsed: 4.864049068999975s
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:00:00 in 1.271760000008726ms. Total time elapsed: 4.864049068999975s
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:00:00 in 1.271760000008726ms. Total time elapsed: 4.864049068999975s
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:00:00 in 1.271760000008726ms. Total time elapsed: 4.864049068999975s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0569670000345468ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0569670000345468ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0569670000345468ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0569670000345468ms
+INFO    __main__timer    409    Read in data file in 192.38480000001346ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 192.38480000001346ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 192.38480000001346ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 192.38480000001346ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 225.77905600002168ms
+INFO    __main__timer    291    Processed file in 225.77905600002168ms
+INFO    __main__timer    291    Processed file in 225.77905600002168ms
+INFO    __main__timer    291    Processed file in 225.77905600002168ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060085000029630464ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060085000029630464ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060085000029630464ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060085000029630464ms
+INFO    __main__timer    409    Read in data file in 171.7749669999762ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 171.7749669999762ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 171.7749669999762ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 171.7749669999762ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 202.16757800000096ms
+INFO    __main__timer    291    Processed file in 202.16757800000096ms
+INFO    __main__timer    291    Processed file in 202.16757800000096ms
+INFO    __main__timer    291    Processed file in 202.16757800000096ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0300.csv in 253.4821009999746ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0300.csv in 253.4821009999746ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0300.csv in 253.4821009999746ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0300.csv in 253.4821009999746ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 467.4793209999848ms
+INFO    __main__timer    307    Comleted iteration in 467.4793209999848ms
+INFO    __main__timer    307    Comleted iteration in 467.4793209999848ms
+INFO    __main__timer    307    Comleted iteration in 467.4793209999848ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:30:00 in 1.6171359999930246ms. Total time elapsed: 5.563465821999955s
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:30:00 in 1.6171359999930246ms. Total time elapsed: 5.563465821999955s
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:30:00 in 1.6171359999930246ms. Total time elapsed: 5.563465821999955s
+INFO    __main__timer    242    Built time index df for 2021-03-12 03:30:00 in 1.6171359999930246ms. Total time elapsed: 5.563465821999955s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08321499996100101ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08321499996100101ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08321499996100101ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08321499996100101ms
+INFO    __main__timer    409    Read in data file in 202.07010399997216ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 202.07010399997216ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 202.07010399997216ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 202.07010399997216ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 233.2065119999811ms
+INFO    __main__timer    291    Processed file in 233.2065119999811ms
+INFO    __main__timer    291    Processed file in 233.2065119999811ms
+INFO    __main__timer    291    Processed file in 233.2065119999811ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.052925000034065306ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.052925000034065306ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.052925000034065306ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.052925000034065306ms
+INFO    __main__timer    409    Read in data file in 175.1695570000038ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 175.1695570000038ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 175.1695570000038ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 175.1695570000038ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 205.15804799998705ms
+INFO    __main__timer    291    Processed file in 205.15804799998705ms
+INFO    __main__timer    291    Processed file in 205.15804799998705ms
+INFO    __main__timer    291    Processed file in 205.15804799998705ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0330.csv in 250.48830299999736ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0330.csv in 250.48830299999736ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0330.csv in 250.48830299999736ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0330.csv in 250.48830299999736ms. Size on disk: 2.93. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 466.73813899997185ms
+INFO    __main__timer    307    Comleted iteration in 466.73813899997185ms
+INFO    __main__timer    307    Comleted iteration in 466.73813899997185ms
+INFO    __main__timer    307    Comleted iteration in 466.73813899997185ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:00:00 in 1.5791520000334458ms. Total time elapsed: 6.270206701999996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:00:00 in 1.5791520000334458ms. Total time elapsed: 6.270206701999996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:00:00 in 1.5791520000334458ms. Total time elapsed: 6.270206701999996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:00:00 in 1.5791520000334458ms. Total time elapsed: 6.270206701999996s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06434599998783597ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06434599998783597ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06434599998783597ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06434599998783597ms
+INFO    __main__timer    409    Read in data file in 205.7292430000075ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 205.7292430000075ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 205.7292430000075ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 205.7292430000075ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 285.2781400000026ms
+INFO    __main__timer    291    Processed file in 285.2781400000026ms
+INFO    __main__timer    291    Processed file in 285.2781400000026ms
+INFO    __main__timer    291    Processed file in 285.2781400000026ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06897100001879153ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06897100001879153ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06897100001879153ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06897100001879153ms
+INFO    __main__timer    409    Read in data file in 156.46702800000867ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 156.46702800000867ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 156.46702800000867ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 156.46702800000867ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 183.90212000002748ms
+INFO    __main__timer    291    Processed file in 183.90212000002748ms
+INFO    __main__timer    291    Processed file in 183.90212000002748ms
+INFO    __main__timer    291    Processed file in 183.90212000002748ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0400.csv in 250.84416099997497ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0400.csv in 250.84416099997497ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0400.csv in 250.84416099997497ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0400.csv in 250.84416099997497ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 444.45250900002975ms
+INFO    __main__timer    307    Comleted iteration in 444.45250900002975ms
+INFO    __main__timer    307    Comleted iteration in 444.45250900002975ms
+INFO    __main__timer    307    Comleted iteration in 444.45250900002975ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:30:00 in 1.4947399999982736ms. Total time elapsed: 7.0063181159999885s
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:30:00 in 1.4947399999982736ms. Total time elapsed: 7.0063181159999885s
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:30:00 in 1.4947399999982736ms. Total time elapsed: 7.0063181159999885s
+INFO    __main__timer    242    Built time index df for 2021-03-12 04:30:00 in 1.4947399999982736ms. Total time elapsed: 7.0063181159999885s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06664599999339771ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06664599999339771ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06664599999339771ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06664599999339771ms
+INFO    __main__timer    409    Read in data file in 188.03209399999332ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 188.03209399999332ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 188.03209399999332ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 188.03209399999332ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 215.70312500000455ms
+INFO    __main__timer    291    Processed file in 215.70312500000455ms
+INFO    __main__timer    291    Processed file in 215.70312500000455ms
+INFO    __main__timer    291    Processed file in 215.70312500000455ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06792800002131116ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06792800002131116ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06792800002131116ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06792800002131116ms
+INFO    __main__timer    409    Read in data file in 152.43711599998733ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.43711599998733ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.43711599998733ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.43711599998733ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 184.7866250000152ms
+INFO    __main__timer    291    Processed file in 184.7866250000152ms
+INFO    __main__timer    291    Processed file in 184.7866250000152ms
+INFO    __main__timer    291    Processed file in 184.7866250000152ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0430.csv in 249.2056259999913ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0430.csv in 249.2056259999913ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0430.csv in 249.2056259999913ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0430.csv in 249.2056259999913ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 443.4829630000081ms
+INFO    __main__timer    307    Comleted iteration in 443.4829630000081ms
+INFO    __main__timer    307    Comleted iteration in 443.4829630000081ms
+INFO    __main__timer    307    Comleted iteration in 443.4829630000081ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:00:00 in 1.3356299999713883ms. Total time elapsed: 7.671622372999991s
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:00:00 in 1.3356299999713883ms. Total time elapsed: 7.671622372999991s
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:00:00 in 1.3356299999713883ms. Total time elapsed: 7.671622372999991s
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:00:00 in 1.3356299999713883ms. Total time elapsed: 7.671622372999991s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.058602000024166045ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.058602000024166045ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.058602000024166045ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.058602000024166045ms
+INFO    __main__timer    409    Read in data file in 196.85630700001866ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 196.85630700001866ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 196.85630700001866ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 196.85630700001866ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 225.86089800000764ms
+INFO    __main__timer    291    Processed file in 225.86089800000764ms
+INFO    __main__timer    291    Processed file in 225.86089800000764ms
+INFO    __main__timer    291    Processed file in 225.86089800000764ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472200001577221ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472200001577221ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472200001577221ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05472200001577221ms
+INFO    __main__timer    409    Read in data file in 195.44381899999053ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 195.44381899999053ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 195.44381899999053ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 195.44381899999053ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 230.28695600004312ms
+INFO    __main__timer    291    Processed file in 230.28695600004312ms
+INFO    __main__timer    291    Processed file in 230.28695600004312ms
+INFO    __main__timer    291    Processed file in 230.28695600004312ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0500.csv in 243.5374510000088ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0500.csv in 243.5374510000088ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0500.csv in 243.5374510000088ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0500.csv in 243.5374510000088ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 482.8151259999913ms
+INFO    __main__timer    307    Comleted iteration in 482.8151259999913ms
+INFO    __main__timer    307    Comleted iteration in 482.8151259999913ms
+INFO    __main__timer    307    Comleted iteration in 482.8151259999913ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:30:00 in 1.2249680000309127ms. Total time elapsed: 8.384992375999957s
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:30:00 in 1.2249680000309127ms. Total time elapsed: 8.384992375999957s
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:30:00 in 1.2249680000309127ms. Total time elapsed: 8.384992375999957s
+INFO    __main__timer    242    Built time index df for 2021-03-12 05:30:00 in 1.2249680000309127ms. Total time elapsed: 8.384992375999957s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04255199996805459ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04255199996805459ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04255199996805459ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.04255199996805459ms
+INFO    __main__timer    409    Read in data file in 203.95208500002582ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 203.95208500002582ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 203.95208500002582ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 203.95208500002582ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 235.3015639999967ms
+INFO    __main__timer    291    Processed file in 235.3015639999967ms
+INFO    __main__timer    291    Processed file in 235.3015639999967ms
+INFO    __main__timer    291    Processed file in 235.3015639999967ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05977199998596916ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05977199998596916ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05977199998596916ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05977199998596916ms
+INFO    __main__timer    409    Read in data file in 149.73296899995603ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.73296899995603ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.73296899995603ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.73296899995603ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 175.33942099998967ms
+INFO    __main__timer    291    Processed file in 175.33942099998967ms
+INFO    __main__timer    291    Processed file in 175.33942099998967ms
+INFO    __main__timer    291    Processed file in 175.33942099998967ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0530.csv in 264.3954440000016ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0530.csv in 264.3954440000016ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0530.csv in 264.3954440000016ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0530.csv in 264.3954440000016ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 449.18754899998703ms
+INFO    __main__timer    307    Comleted iteration in 449.18754899998703ms
+INFO    __main__timer    307    Comleted iteration in 449.18754899998703ms
+INFO    __main__timer    307    Comleted iteration in 449.18754899998703ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:00:00 in 1.3581499999872904ms. Total time elapsed: 9.074535642s
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:00:00 in 1.3581499999872904ms. Total time elapsed: 9.074535642s
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:00:00 in 1.3581499999872904ms. Total time elapsed: 9.074535642s
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:00:00 in 1.3581499999872904ms. Total time elapsed: 9.074535642s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06351899997980581ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06351899997980581ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06351899997980581ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06351899997980581ms
+INFO    __main__timer    409    Read in data file in 190.63619600001402ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 190.63619600001402ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 190.63619600001402ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 190.63619600001402ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 224.85295600000654ms
+INFO    __main__timer    291    Processed file in 224.85295600000654ms
+INFO    __main__timer    291    Processed file in 224.85295600000654ms
+INFO    __main__timer    291    Processed file in 224.85295600000654ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055513999996037455ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055513999996037455ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055513999996037455ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.055513999996037455ms
+INFO    __main__timer    409    Read in data file in 170.93176200000926ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 170.93176200000926ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 170.93176200000926ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 170.93176200000926ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 255.492868000033ms
+INFO    __main__timer    291    Processed file in 255.492868000033ms
+INFO    __main__timer    291    Processed file in 255.492868000033ms
+INFO    __main__timer    291    Processed file in 255.492868000033ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0600.csv in 232.65457799999467ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0600.csv in 232.65457799999467ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0600.csv in 232.65457799999467ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0600.csv in 232.65457799999467ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 496.4819560000251ms
+INFO    __main__timer    307    Comleted iteration in 496.4819560000251ms
+INFO    __main__timer    307    Comleted iteration in 496.4819560000251ms
+INFO    __main__timer    307    Comleted iteration in 496.4819560000251ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:30:00 in 1.190511000004335ms. Total time elapsed: 9.801102888999992s
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:30:00 in 1.190511000004335ms. Total time elapsed: 9.801102888999992s
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:30:00 in 1.190511000004335ms. Total time elapsed: 9.801102888999992s
+INFO    __main__timer    242    Built time index df for 2021-03-12 06:30:00 in 1.190511000004335ms. Total time elapsed: 9.801102888999992s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05960000004279209ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05960000004279209ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05960000004279209ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05960000004279209ms
+INFO    __main__timer    409    Read in data file in 211.22927600004004ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 211.22927600004004ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 211.22927600004004ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 211.22927600004004ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 242.86535300001333ms
+INFO    __main__timer    291    Processed file in 242.86535300001333ms
+INFO    __main__timer    291    Processed file in 242.86535300001333ms
+INFO    __main__timer    291    Processed file in 242.86535300001333ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07158400001117116ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07158400001117116ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07158400001117116ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07158400001117116ms
+INFO    __main__timer    409    Read in data file in 152.78551199997992ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.78551199997992ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.78551199997992ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.78551199997992ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 178.5411039999758ms
+INFO    __main__timer    291    Processed file in 178.5411039999758ms
+INFO    __main__timer    291    Processed file in 178.5411039999758ms
+INFO    __main__timer    291    Processed file in 178.5411039999758ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0630.csv in 248.4641359999955ms. Size on disk: 2.90. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0630.csv in 248.4641359999955ms. Size on disk: 2.90. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0630.csv in 248.4641359999955ms. Size on disk: 2.90. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0630.csv in 248.4641359999955ms. Size on disk: 2.90. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 435.44664400002375ms
+INFO    __main__timer    307    Comleted iteration in 435.44664400002375ms
+INFO    __main__timer    307    Comleted iteration in 435.44664400002375ms
+INFO    __main__timer    307    Comleted iteration in 435.44664400002375ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:00:00 in 1.4973359999999047ms. Total time elapsed: 10.485842235999996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:00:00 in 1.4973359999999047ms. Total time elapsed: 10.485842235999996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:00:00 in 1.4973359999999047ms. Total time elapsed: 10.485842235999996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:00:00 in 1.4973359999999047ms. Total time elapsed: 10.485842235999996s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07105800000317686ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07105800000317686ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07105800000317686ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07105800000317686ms
+INFO    __main__timer    409    Read in data file in 183.78643200003353ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 183.78643200003353ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 183.78643200003353ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 183.78643200003353ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 213.0108929999892ms
+INFO    __main__timer    291    Processed file in 213.0108929999892ms
+INFO    __main__timer    291    Processed file in 213.0108929999892ms
+INFO    __main__timer    291    Processed file in 213.0108929999892ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.061017999996693106ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.061017999996693106ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.061017999996693106ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.061017999996693106ms
+INFO    __main__timer    409    Read in data file in 153.59673000000384ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 153.59673000000384ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 153.59673000000384ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 153.59673000000384ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 183.22393900001543ms
+INFO    __main__timer    291    Processed file in 183.22393900001543ms
+INFO    __main__timer    291    Processed file in 183.22393900001543ms
+INFO    __main__timer    291    Processed file in 183.22393900001543ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0700.csv in 240.69493900003636ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0700.csv in 240.69493900003636ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0700.csv in 240.69493900003636ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0700.csv in 240.69493900003636ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 434.40612900002407ms
+INFO    __main__timer    307    Comleted iteration in 434.40612900002407ms
+INFO    __main__timer    307    Comleted iteration in 434.40612900002407ms
+INFO    __main__timer    307    Comleted iteration in 434.40612900002407ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:30:00 in 1.9245459999979175ms. Total time elapsed: 11.14456925099995s
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:30:00 in 1.9245459999979175ms. Total time elapsed: 11.14456925099995s
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:30:00 in 1.9245459999979175ms. Total time elapsed: 11.14456925099995s
+INFO    __main__timer    242    Built time index df for 2021-03-12 07:30:00 in 1.9245459999979175ms. Total time elapsed: 11.14456925099995s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05498199999465214ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05498199999465214ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05498199999465214ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.05498199999465214ms
+INFO    __main__timer    409    Read in data file in 176.5995700000076ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 176.5995700000076ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 176.5995700000076ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 176.5995700000076ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 207.93325300002152ms
+INFO    __main__timer    291    Processed file in 207.93325300002152ms
+INFO    __main__timer    291    Processed file in 207.93325300002152ms
+INFO    __main__timer    291    Processed file in 207.93325300002152ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05581800002119053ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05581800002119053ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05581800002119053ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05581800002119053ms
+INFO    __main__timer    409    Read in data file in 149.94029000001774ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.94029000001774ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.94029000001774ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.94029000001774ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 179.6720279999704ms
+INFO    __main__timer    291    Processed file in 179.6720279999704ms
+INFO    __main__timer    291    Processed file in 179.6720279999704ms
+INFO    __main__timer    291    Processed file in 179.6720279999704ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0730.csv in 225.6722029999878ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0730.csv in 225.6722029999878ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0730.csv in 225.6722029999878ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0730.csv in 225.6722029999878ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 415.5195499999991ms
+INFO    __main__timer    307    Comleted iteration in 415.5195499999991ms
+INFO    __main__timer    307    Comleted iteration in 415.5195499999991ms
+INFO    __main__timer    307    Comleted iteration in 415.5195499999991ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:00:00 in 2.0175989999984267ms. Total time elapsed: 11.773882362999984s
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:00:00 in 2.0175989999984267ms. Total time elapsed: 11.773882362999984s
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:00:00 in 2.0175989999984267ms. Total time elapsed: 11.773882362999984s
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:00:00 in 2.0175989999984267ms. Total time elapsed: 11.773882362999984s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08286199999929522ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08286199999929522ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08286199999929522ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.08286199999929522ms
+INFO    __main__timer    409    Read in data file in 178.2162279999966ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 178.2162279999966ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 178.2162279999966ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 178.2162279999966ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 207.32156000002533ms
+INFO    __main__timer    291    Processed file in 207.32156000002533ms
+INFO    __main__timer    291    Processed file in 207.32156000002533ms
+INFO    __main__timer    291    Processed file in 207.32156000002533ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07403999995858612ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07403999995858612ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07403999995858612ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.07403999995858612ms
+INFO    __main__timer    409    Read in data file in 151.40119500000537ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 151.40119500000537ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 151.40119500000537ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 151.40119500000537ms. Size on disk: 1.78MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 186.4550160000249ms
+INFO    __main__timer    291    Processed file in 186.4550160000249ms
+INFO    __main__timer    291    Processed file in 186.4550160000249ms
+INFO    __main__timer    291    Processed file in 186.4550160000249ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0800.csv in 237.45567200001005ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0800.csv in 237.45567200001005ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0800.csv in 237.45567200001005ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0800.csv in 237.45567200001005ms. Size on disk: 2.87. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 433.104692000029ms
+INFO    __main__timer    307    Comleted iteration in 433.104692000029ms
+INFO    __main__timer    307    Comleted iteration in 433.104692000029ms
+INFO    __main__timer    307    Comleted iteration in 433.104692000029ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:30:00 in 1.7991150000398193ms. Total time elapsed: 12.420793087999982s
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:30:00 in 1.7991150000398193ms. Total time elapsed: 12.420793087999982s
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:30:00 in 1.7991150000398193ms. Total time elapsed: 12.420793087999982s
+INFO    __main__timer    242    Built time index df for 2021-03-12 08:30:00 in 1.7991150000398193ms. Total time elapsed: 12.420793087999982s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.060392000023057335ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.060392000023057335ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.060392000023057335ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.060392000023057335ms
+INFO    __main__timer    409    Read in data file in 179.6643899999708ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 179.6643899999708ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 179.6643899999708ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 179.6643899999708ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 207.21991100003834ms
+INFO    __main__timer    291    Processed file in 207.21991100003834ms
+INFO    __main__timer    291    Processed file in 207.21991100003834ms
+INFO    __main__timer    291    Processed file in 207.21991100003834ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05525700004227474ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05525700004227474ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05525700004227474ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05525700004227474ms
+INFO    __main__timer    409    Read in data file in 152.3315529999536ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.3315529999536ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.3315529999536ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 152.3315529999536ms. Size on disk: 1.79MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 226.91820000000007ms
+INFO    __main__timer    291    Processed file in 226.91820000000007ms
+INFO    __main__timer    291    Processed file in 226.91820000000007ms
+INFO    __main__timer    291    Processed file in 226.91820000000007ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0830.csv in 240.32536900000423ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0830.csv in 240.32536900000423ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0830.csv in 240.32536900000423ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0830.csv in 240.32536900000423ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 477.8025300000195ms
+INFO    __main__timer    307    Comleted iteration in 477.8025300000195ms
+INFO    __main__timer    307    Comleted iteration in 477.8025300000195ms
+INFO    __main__timer    307    Comleted iteration in 477.8025300000195ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:00:00 in 1.8608679999942979ms. Total time elapsed: 13.111830574999999s
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:00:00 in 1.8608679999942979ms. Total time elapsed: 13.111830574999999s
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:00:00 in 1.8608679999942979ms. Total time elapsed: 13.111830574999999s
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:00:00 in 1.8608679999942979ms. Total time elapsed: 13.111830574999999s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07758899999998903ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07758899999998903ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07758899999998903ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07758899999998903ms
+INFO    __main__timer    409    Read in data file in 185.70728499997813ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 185.70728499997813ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 185.70728499997813ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 185.70728499997813ms. Size on disk: 2.36MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 213.78053500001215ms
+INFO    __main__timer    291    Processed file in 213.78053500001215ms
+INFO    __main__timer    291    Processed file in 213.78053500001215ms
+INFO    __main__timer    291    Processed file in 213.78053500001215ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060574000031010655ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060574000031010655ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060574000031010655ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.060574000031010655ms
+INFO    __main__timer    409    Read in data file in 149.2707660000292ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.2707660000292ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.2707660000292ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 149.2707660000292ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 178.8609199999769ms
+INFO    __main__timer    291    Processed file in 178.8609199999769ms
+INFO    __main__timer    291    Processed file in 178.8609199999769ms
+INFO    __main__timer    291    Processed file in 178.8609199999769ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0900.csv in 234.5569980000164ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0900.csv in 234.5569980000164ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0900.csv in 234.5569980000164ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0900.csv in 234.5569980000164ms. Size on disk: 2.88. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 422.2177780000038ms
+INFO    __main__timer    307    Comleted iteration in 422.2177780000038ms
+INFO    __main__timer    307    Comleted iteration in 422.2177780000038ms
+INFO    __main__timer    307    Comleted iteration in 422.2177780000038ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:30:00 in 1.6477930000178276ms. Total time elapsed: 13.75557523599997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:30:00 in 1.6477930000178276ms. Total time elapsed: 13.75557523599997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:30:00 in 1.6477930000178276ms. Total time elapsed: 13.75557523599997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 09:30:00 in 1.6477930000178276ms. Total time elapsed: 13.75557523599997s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0793759999737631ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0793759999737631ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0793759999737631ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.0793759999737631ms
+INFO    __main__timer    409    Read in data file in 184.34959699999354ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 184.34959699999354ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 184.34959699999354ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 184.34959699999354ms. Size on disk: 2.37MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 212.28087899999082ms
+INFO    __main__timer    291    Processed file in 212.28087899999082ms
+INFO    __main__timer    291    Processed file in 212.28087899999082ms
+INFO    __main__timer    291    Processed file in 212.28087899999082ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06852699999626566ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06852699999626566ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06852699999626566ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.06852699999626566ms
+INFO    __main__timer    409    Read in data file in 156.0250879999785ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 156.0250879999785ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 156.0250879999785ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 156.0250879999785ms. Size on disk: 1.80MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 183.74595199998112ms
+INFO    __main__timer    291    Processed file in 183.74595199998112ms
+INFO    __main__timer    291    Processed file in 183.74595199998112ms
+INFO    __main__timer    291    Processed file in 183.74595199998112ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_0930.csv in 230.3589940000279ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0930.csv in 230.3589940000279ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0930.csv in 230.3589940000279ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_0930.csv in 230.3589940000279ms. Size on disk: 2.89. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 423.168722000014ms
+INFO    __main__timer    307    Comleted iteration in 423.168722000014ms
+INFO    __main__timer    307    Comleted iteration in 423.168722000014ms
+INFO    __main__timer    307    Comleted iteration in 423.168722000014ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:00:00 in 1.5493550000087453ms. Total time elapsed: 14.397704295999972s
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:00:00 in 1.5493550000087453ms. Total time elapsed: 14.397704295999972s
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:00:00 in 1.5493550000087453ms. Total time elapsed: 14.397704295999972s
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:00:00 in 1.5493550000087453ms. Total time elapsed: 14.397704295999972s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06452899998521389ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06452899998521389ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06452899998521389ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06452899998521389ms
+INFO    __main__timer    409    Read in data file in 179.14498400000411ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 179.14498400000411ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 179.14498400000411ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 179.14498400000411ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 209.11772699997755ms
+INFO    __main__timer    291    Processed file in 209.11772699997755ms
+INFO    __main__timer    291    Processed file in 209.11772699997755ms
+INFO    __main__timer    291    Processed file in 209.11772699997755ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0684320000345906ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0684320000345906ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0684320000345906ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0684320000345906ms
+INFO    __main__timer    409    Read in data file in 161.92609999995966ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 161.92609999995966ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 161.92609999995966ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 161.92609999995966ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 189.6280429999706ms
+INFO    __main__timer    291    Processed file in 189.6280429999706ms
+INFO    __main__timer    291    Processed file in 189.6280429999706ms
+INFO    __main__timer    291    Processed file in 189.6280429999706ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_1000.csv in 237.03251799997815ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1000.csv in 237.03251799997815ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1000.csv in 237.03251799997815ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1000.csv in 237.03251799997815ms. Size on disk: 2.91. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 438.201456999991ms
+INFO    __main__timer    307    Comleted iteration in 438.201456999991ms
+INFO    __main__timer    307    Comleted iteration in 438.201456999991ms
+INFO    __main__timer    307    Comleted iteration in 438.201456999991ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:30:00 in 1.3771620000397888ms. Total time elapsed: 15.051654288999998s
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:30:00 in 1.3771620000397888ms. Total time elapsed: 15.051654288999998s
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:30:00 in 1.3771620000397888ms. Total time elapsed: 15.051654288999998s
+INFO    __main__timer    242    Built time index df for 2021-03-12 10:30:00 in 1.3771620000397888ms. Total time elapsed: 15.051654288999998s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06718100001990024ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06718100001990024ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06718100001990024ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.06718100001990024ms
+INFO    __main__timer    409    Read in data file in 183.99433799999088ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 183.99433799999088ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 183.99433799999088ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 183.99433799999088ms. Size on disk: 2.38MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 216.7332129999977ms
+INFO    __main__timer    291    Processed file in 216.7332129999977ms
+INFO    __main__timer    291    Processed file in 216.7332129999977ms
+INFO    __main__timer    291    Processed file in 216.7332129999977ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0936470000283407ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0936470000283407ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0936470000283407ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.0936470000283407ms
+INFO    __main__timer    409    Read in data file in 168.42057799999566ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 168.42057799999566ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 168.42057799999566ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 168.42057799999566ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 195.27510199998233ms
+INFO    __main__timer    291    Processed file in 195.27510199998233ms
+INFO    __main__timer    291    Processed file in 195.27510199998233ms
+INFO    __main__timer    291    Processed file in 195.27510199998233ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_1030.csv in 235.1550360000374ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1030.csv in 235.1550360000374ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1030.csv in 235.1550360000374ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1030.csv in 235.1550360000374ms. Size on disk: 2.92. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 441.228236000029ms
+INFO    __main__timer    307    Comleted iteration in 441.228236000029ms
+INFO    __main__timer    307    Comleted iteration in 441.228236000029ms
+INFO    __main__timer    307    Comleted iteration in 441.228236000029ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:00:00 in 2.1261859999981425ms. Total time elapsed: 15.717405586999973s
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:00:00 in 2.1261859999981425ms. Total time elapsed: 15.717405586999973s
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:00:00 in 2.1261859999981425ms. Total time elapsed: 15.717405586999973s
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:00:00 in 2.1261859999981425ms. Total time elapsed: 15.717405586999973s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07535400004599069ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07535400004599069ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07535400004599069ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07535400004599069ms
+INFO    __main__timer    409    Read in data file in 201.35567300002322ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 201.35567300002322ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 201.35567300002322ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 201.35567300002322ms. Size on disk: 2.40MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 271.83145399999376ms
+INFO    __main__timer    291    Processed file in 271.83145399999376ms
+INFO    __main__timer    291    Processed file in 271.83145399999376ms
+INFO    __main__timer    291    Processed file in 271.83145399999376ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05921500002159519ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05921500002159519ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05921500002159519ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05921500002159519ms
+INFO    __main__timer    409    Read in data file in 163.82976900001722ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 163.82976900001722ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 163.82976900001722ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 163.82976900001722ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 199.6640859999843ms
+INFO    __main__timer    291    Processed file in 199.6640859999843ms
+INFO    __main__timer    291    Processed file in 199.6640859999843ms
+INFO    __main__timer    291    Processed file in 199.6640859999843ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_1100.csv in 247.65208000002303ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1100.csv in 247.65208000002303ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1100.csv in 247.65208000002303ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1100.csv in 247.65208000002303ms. Size on disk: 2.94. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 457.9702569999995ms
+INFO    __main__timer    307    Comleted iteration in 457.9702569999995ms
+INFO    __main__timer    307    Comleted iteration in 457.9702569999995ms
+INFO    __main__timer    307    Comleted iteration in 457.9702569999995ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:30:00 in 1.9142319999900792ms. Total time elapsed: 16.45354264599996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:30:00 in 1.9142319999900792ms. Total time elapsed: 16.45354264599996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:30:00 in 1.9142319999900792ms. Total time elapsed: 16.45354264599996s
+INFO    __main__timer    242    Built time index df for 2021-03-12 11:30:00 in 1.9142319999900792ms. Total time elapsed: 16.45354264599996s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.09601100003919782ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.09601100003919782ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.09601100003919782ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.09601100003919782ms
+INFO    __main__timer    409    Read in data file in 192.06373299999768ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 192.06373299999768ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 192.06373299999768ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 192.06373299999768ms. Size on disk: 2.41MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 226.86261899997362ms
+INFO    __main__timer    291    Processed file in 226.86261899997362ms
+INFO    __main__timer    291    Processed file in 226.86261899997362ms
+INFO    __main__timer    291    Processed file in 226.86261899997362ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.069980000034775ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.069980000034775ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.069980000034775ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.069980000034775ms
+INFO    __main__timer    409    Read in data file in 173.11839500001724ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 173.11839500001724ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 173.11839500001724ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 173.11839500001724ms. Size on disk: 1.81MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 200.98085800003673ms
+INFO    __main__timer    291    Processed file in 200.98085800003673ms
+INFO    __main__timer    291    Processed file in 200.98085800003673ms
+INFO    __main__timer    291    Processed file in 200.98085800003673ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_1130.csv in 259.0304919999653ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1130.csv in 259.0304919999653ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1130.csv in 259.0304919999653ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1130.csv in 259.0304919999653ms. Size on disk: 2.95. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 470.11441299997614ms
+INFO    __main__timer    307    Comleted iteration in 470.11441299997614ms
+INFO    __main__timer    307    Comleted iteration in 470.11441299997614ms
+INFO    __main__timer    307    Comleted iteration in 470.11441299997614ms
+INFO    __main__timer    242    Built time index df for 2021-03-12 12:00:00 in 1.8807680000350047ms. Total time elapsed: 17.15849674599997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 12:00:00 in 1.8807680000350047ms. Total time elapsed: 17.15849674599997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 12:00:00 in 1.8807680000350047ms. Total time elapsed: 17.15849674599997s
+INFO    __main__timer    242    Built time index df for 2021-03-12 12:00:00 in 1.8807680000350047ms. Total time elapsed: 17.15849674599997s
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07716800001844604ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07716800001844604ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07716800001844604ms
+INFO    __main__timer    265    Found next FNs for NF17 in 0.07716800001844604ms
+INFO    __main__timer    409    Read in data file in 200.25041999997484ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 200.25041999997484ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 200.25041999997484ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    409    Read in data file in 200.25041999997484ms. Size on disk: 2.43MB. Size in memory: 2.02MB
+INFO    __main__timer    291    Processed file in 231.10292600000548ms
+INFO    __main__timer    291    Processed file in 231.10292600000548ms
+INFO    __main__timer    291    Processed file in 231.10292600000548ms
+INFO    __main__timer    291    Processed file in 231.10292600000548ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05686899999091111ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05686899999091111ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05686899999091111ms
+INFO    __main__timer    265    Found next FNs for NF3 in 0.05686899999091111ms
+INFO    __main__timer    409    Read in data file in 147.63283899998214ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 147.63283899998214ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 147.63283899998214ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    409    Read in data file in 147.63283899998214ms. Size on disk: 1.82MB. Size in memory: 1.44MB
+INFO    __main__timer    291    Processed file in 181.03652000002057ms
+INFO    __main__timer    291    Processed file in 181.03652000002057ms
+INFO    __main__timer    291    Processed file in 181.03652000002057ms
+INFO    __main__timer    291    Processed file in 181.03652000002057ms
+INFO    __main__timer    306    Wrote to file 2021_03_12_1200.csv in 230.90653799999927ms. Size on disk: 2.96. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1200.csv in 230.90653799999927ms. Size on disk: 2.96. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1200.csv in 230.90653799999927ms. Size on disk: 2.96. Size in memory was 4.42MB
+INFO    __main__timer    306    Wrote to file 2021_03_12_1200.csv in 230.90653799999927ms. Size on disk: 2.96. Size in memory was 4.42MB
+INFO    __main__timer    307    Comleted iteration in 419.6009650000292ms
+INFO    __main__timer    307    Comleted iteration in 419.6009650000292ms
+INFO    __main__timer    307    Comleted iteration in 419.6009650000292ms
+INFO    __main__timer    307    Comleted iteration in 419.6009650000292ms
+INFO    __main__timer    325    Completed run in 17.813111453999966s
+INFO    __main__timer    325    Completed run in 17.813111453999966s
+INFO    __main__timer    325    Completed run in 17.813111453999966s
+INFO    __main__timer    325    Completed run in 17.813111453999966s
