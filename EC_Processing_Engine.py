@@ -2,10 +2,8 @@ from pathlib import Path
 import re
 import os
 import warnings
-import logging
 
 import sys
-import json
 
 import numpy as np
 import pandas as pd
@@ -65,7 +63,7 @@ class fast_processing_engine():
     make_empty - creates a blank fast file dataframe for the case that no valid files were found for a given time period. Used by multiple class methods
     """
     
-    def __init__(self, converted_dirs, file_length, acq_freq, start_time, end_time, site_names, out_dir, tlog=True, ilog=True, blog=False):
+    def __init__(self, converted_dirs, file_length, acq_freq, start_time, end_time, site_names, out_dir):
         """converted_dirs - list of str
             directories containing raw converted TOA5 files. Each directory contains all the data to process from a given site, with no sub-directories. 
             For example, the following is an acceptable storage format:
@@ -199,7 +197,7 @@ class fast_processing_engine():
         
         for cdir in converted_dirs:
             if not Path(cdir).exists():
-                
+                print(f'Could not find {cdir}')
                 sys.exit(1)
         
         if not self.out_path.exists():
@@ -207,7 +205,7 @@ class fast_processing_engine():
             if should_make_outpath == 'y':
                 self.out_path.mkdir(parents=True)
             else: 
-                
+                print(f'Okay, exiting...')
                 sys.exit(1)
         return
         
@@ -424,7 +422,7 @@ class fast_processing_engine():
             7. Re-order the columns"""
         
         if site == 'NF17':
-            if fts.date() < pd.to_datetime("2019-05-19"):
+            if fts.date() < pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["PCELL_LI7500_NF17", "DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "FLAG_CSAT3_NF17", "FLAG_CSAT3_NF7", 'TCELL_LI7500_NF17']
                 renaming_dict = {
                      'Ux_CSAT3_17m':"Ux_CSAT3_NF17",
@@ -441,7 +439,7 @@ class fast_processing_engine():
                 }
                 
             # differences: P_LI7500 was added
-            elif fts.date() > pd.to_datetime("2019-05-19"):
+            elif fts.date() > pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "FLAG_CSAT3_NF17", "FLAG_CSAT3_NF7", 'TCELL_LI7500_NF17']
                 renaming_dict = {
                      'Ux_CSAT3_17m':"Ux_CSAT3_NF17",
@@ -459,12 +457,12 @@ class fast_processing_engine():
                 }
                 
             # if the file ever overlaps with a "maintenance" day, omit that whole day
-            elif fts.date() == pd.to_datetime("2019-05-19"):
+            elif fts.date() == pd.to_datetime("2019-05-19").date():
                 df = self.make_empty(fts, site)
                 return df
                 
         elif site == "NF3":
-            if fts.date() < pd.to_datetime("2019-05-19"):
+            if fts.date() < pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["PCELL_LI7500_NF3", 'TCELL_LI7500_NF3', 'FLAG_CSAT3B_NF3']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_NF3",
@@ -478,7 +476,7 @@ class fast_processing_engine():
                 }
             
             # differences: diag_csat3b removed, p_li7500 added
-            elif fts.date() > pd.to_datetime("2019-05-19"):
+            elif fts.date() > pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["DIAG_CSAT3B_NF3", "FLAG_CSAT3B_NF3", 'TCELL_LI7500_NF3']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_NF3",
@@ -491,12 +489,12 @@ class fast_processing_engine():
                      'DIAG_LI7500':"DIAG_LI7500_NF3"
                 }
             
-            elif fts.date() == pd.to_datetime("2019-05-19"):
+            elif fts.date() == pd.Timestamp("2019-05-19").date():
                 df = self.make_empty(fts, site)
                 return df
                 
         elif site == "SF4":
-            if fts.date() < pd.to_datetime("2100-11-19"):
+            if fts.date() < pd.Timestamp("2100-11-19").date():
                 cols_to_add = ['FLAG_SON_SF4']
                 renaming_dict = {
                     'Ux': 'Ux_SON_SF4',
@@ -512,7 +510,7 @@ class fast_processing_engine():
                 }   
             
         elif site == 'SF7':
-            if fts.date() < pd.to_datetime("2019-05-19"):
+            if fts.date() < pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["PCELL_LI7500_SF7", 'TCELL_LI7500_SF7', 'FLAG_CSAT3B_SF7']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_SF7",
@@ -525,7 +523,7 @@ class fast_processing_engine():
                      'DIAG_LI7500':"DIAG_LI7500_SF7"
                 }
                 
-            elif fts.date() > pd.to_datetime("2019-05-19"):
+            elif fts.date() > pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["DIAG_CSAT3B_SF7", "FLAG_CSAT3B_SF7", 'TCELL_LI7500_SF7']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_SF7",
@@ -538,11 +536,11 @@ class fast_processing_engine():
                      'DIAG_LI7500':"DIAG_LI7500_SF7"
                 }
             
-            elif fts.date() == pd.to_datetime("2019-05-19"):
+            elif fts.date() == pd.Timestamp("2019-05-19").date():
                 df = self.make_empty(fts, site)
                 return df
         elif site == 'UF3': 
-            if fts.date() > pd.to_datetime("2019-02-13"):
+            if fts.date() > pd.Timestamp("2019-02-13").date():
                     cols_to_add = ['FLAG_SON_UF3']
                     renaming_dict = {
                         'Ux': 'Ux_SON_UF3',
@@ -566,7 +564,7 @@ class fast_processing_engine():
         
         return df 
 
-     def process_diagnostics(self, df, site):
+    def process_diagnostics(self, df, site):
         """search a dataframe for diagnostic columns and turn them into boolean flags"""
         # how to process diagnostic bits for each instrument
         diag_dict = {
@@ -601,7 +599,7 @@ class fast_processing_engine():
                 
         return df  
     
-    def summary_template():
+    def summary_template(self):
         # coordinates for creating an xr dataset. 
         # dataset sub-array names are given by summary_cols
         summary_cols = {'Ux':0, 'Uy':1, 'Uz':2, 'Ts':3, 'CO2':4, 'H2O':5, 'PCELL':6, 'TCELL':7, 'FLAG':8}
@@ -700,4 +698,8 @@ class fast_processing_engine():
             bin_centers = 10**(np.log10(bin_edges[:-1]) + np.diff(np.log10(bin_edges))/2)
             binned_cosp, _, _ = stats.binned_statistic(x=cosp_df['f'], values=cosp_df.values.T, bins=bin_edges)
             
-        
+def main():
+    return
+
+if __name__ == '__main__':
+    main()
