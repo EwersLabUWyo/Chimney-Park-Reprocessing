@@ -104,10 +104,11 @@ class fast_processing_engine():
                 'PCELL_LI7500_NF17',
                 'TCELL_LI7500_NF17',
                 'DIAG_CSAT3_NF17',
-                'FLAG_CSAT3_NF17',
+                'SONICFLAG_CSAT3_NF17',
                 'DIAG_CSAT3_NF7',
-                'FLAG_CSAT3_NF7',
-                'DIAG_LI7500_NF17'
+                'SONICFLAG_CSAT3_NF7',
+                'DIAG_LI7500_NF17',
+                'IRGAFLAG_LI7500_NF17'
             ],
             'NF3': [
                 'TIMESTAMP',
@@ -121,8 +122,9 @@ class fast_processing_engine():
                 'PCELL_LI7500_NF3',
                 'TCELL_LI7500_NF3',
                 'DIAG_CSAT3B_NF3',
-                'FLAG_CSAT3B_NF3',
-                'DIAG_LI7500_NF3'
+                'SONICFLAG_CSAT3B_NF3',
+                'DIAG_LI7500_NF3',
+                'IRGAFLAG_LI7500_NF3'
             ],
             'SF4': [
                 'TIMESTAMP',
@@ -136,8 +138,9 @@ class fast_processing_engine():
                 'PCELL_IRGA_SF4',
                 'TCELL_IRGA_SF4',
                 'DIAG_SON_SF4',
-                'FLAG_SON_SF4',
-                'DIAG_IRGA_SF4'
+                'SONICFLAG_SON_SF4',
+                'DIAG_IRGA_SF4',
+                'IRGAFLAG_IRGA_SF4'
             ],
             'SF7': [
                 'TIMESTAMP',
@@ -151,8 +154,9 @@ class fast_processing_engine():
                 'PCELL_LI7500_SF7',
                 'TCELL_LI7500_SF7',
                 'DIAG_CSAT3B_SF7',
-                'FLAG_CSAT3B_SF7',
-                'DIAG_LI7500_SF7'
+                'SONICFLAG_CSAT3B_SF7',
+                'DIAG_LI7500_SF7',
+                'IRGAFLAG_LI7500_SF7'
             ],
             'UF3': [
                 'TIMESTAMP',
@@ -166,8 +170,9 @@ class fast_processing_engine():
                 'PCELL_IRGA_UF3',
                 'TCELL_IRGA_UF3',
                 'DIAG_SON_UF3',
-                'FLAG_SON_UF3',
-                'DIAG_IRGA_UF3'
+                'SONICFLAG_SON_UF3',
+                'DIAG_IRGA_UF3',
+                'IRGAFLAG_IRGA_UF3'
             ]
         }
         
@@ -268,20 +273,23 @@ class fast_processing_engine():
                         
         # after whole run is complete: convert summary stats to an xarray
         if extras == 'all' or 'summary' in extras:
-            self.summary = xr.Dataset(
-                data_vars={
+            data_vars = {
                     colname:(['TIMESTAMP', 'STAT', 'SITE'], summary_arr[:, :, :, icolname]) 
-                    for icolname, colname in enumerate(summary_cols)
-                },
-                coords={
+                    for colname, icolname in summary_cols.items()
+                }
+            coords = {
                     'TIMESTAMP':self.desired_file_tss,
-                    'STAT':['Avg', 'Max', 'Min', 'Std', 'Npc'],
+                    'STAT':['Avg', 'Max', 'Min', 'Std'],
                     'SITE':list(summary_sites.keys())
                 }
+            
+            self.summary = xr.Dataset(
+                data_vars=data_vars,
+                coords=coords
             )
             self.summary['fns'] = xr.DataArray(self.desired_fns, coords={"TIMESTAMP": self.desired_file_tss})
         
-        return dat
+        return
     
     def process_interval(self, idfts, dfts, ifile, desired_fn):
         '''processes one timestamp worth of data across multiple sites. Reads in one timestamp worth of data, outputs one timestamp worth of data, and returns metadata and raw output data'''
@@ -423,7 +431,7 @@ class fast_processing_engine():
         
         if site == 'NF17':
             if fts.date() < pd.Timestamp("2019-05-19").date():
-                cols_to_add = ["PCELL_LI7500_NF17", "DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "FLAG_CSAT3_NF17", "FLAG_CSAT3_NF7", 'TCELL_LI7500_NF17']
+                cols_to_add = ["PCELL_LI7500_NF17", "DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "SONICFLAG_CSAT3_NF17", "SONICFLAG_CSAT3_NF7", 'TCELL_LI7500_NF17', 'IRGAFLAG_LI7500_NF17']
                 renaming_dict = {
                      'Ux_CSAT3_17m':"Ux_CSAT3_NF17",
                      'Uy_CSAT3_17m':"Uy_CSAT3_NF17",
@@ -440,7 +448,7 @@ class fast_processing_engine():
                 
             # differences: P_LI7500 was added
             elif fts.date() > pd.Timestamp("2019-05-19").date():
-                cols_to_add = ["DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "FLAG_CSAT3_NF17", "FLAG_CSAT3_NF7", 'TCELL_LI7500_NF17']
+                cols_to_add = ["DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "SONICFLAG_CSAT3_NF17", "SONICFLAG_CSAT3_NF7", 'TCELL_LI7500_NF17', 'IRGAFLAG_LI7500_NF17']
                 renaming_dict = {
                      'Ux_CSAT3_17m':"Ux_CSAT3_NF17",
                      'Uy_CSAT3_17m':"Uy_CSAT3_NF17",
@@ -463,7 +471,7 @@ class fast_processing_engine():
                 
         elif site == "NF3":
             if fts.date() < pd.Timestamp("2019-05-19").date():
-                cols_to_add = ["PCELL_LI7500_NF3", 'TCELL_LI7500_NF3', 'FLAG_CSAT3B_NF3']
+                cols_to_add = ["PCELL_LI7500_NF3", 'TCELL_LI7500_NF3', 'SONICFLAG_CSAT3B_NF3', 'IRGAFLAG_LI7500_NF3']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_NF3",
                      'Uy_CSAT3B':"Uy_CSAT3B_NF3",
@@ -477,7 +485,7 @@ class fast_processing_engine():
             
             # differences: diag_csat3b removed, p_li7500 added
             elif fts.date() > pd.Timestamp("2019-05-19").date():
-                cols_to_add = ["DIAG_CSAT3B_NF3", "FLAG_CSAT3B_NF3", 'TCELL_LI7500_NF3']
+                cols_to_add = ["DIAG_CSAT3B_NF3", "SONICFLAG_CSAT3B_NF3", 'TCELL_LI7500_NF3', 'IRGAFLAG_LI7500_NF3']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_NF3",
                      'Uy_CSAT3B':"Uy_CSAT3B_NF3",
@@ -495,7 +503,7 @@ class fast_processing_engine():
                 
         elif site == "SF4":
             if fts.date() < pd.Timestamp("2100-11-19").date():
-                cols_to_add = ['FLAG_SON_SF4']
+                cols_to_add = ['SONICFLAG_SON_SF4', 'IRGAFLAG_IRGA_SF4']
                 renaming_dict = {
                     'Ux': 'Ux_SON_SF4',
                     'Uy': 'Uy_SON_SF4',
@@ -511,7 +519,7 @@ class fast_processing_engine():
             
         elif site == 'SF7':
             if fts.date() < pd.Timestamp("2019-05-19").date():
-                cols_to_add = ["PCELL_LI7500_SF7", 'TCELL_LI7500_SF7', 'FLAG_CSAT3B_SF7']
+                cols_to_add = ["PCELL_LI7500_SF7", 'TCELL_LI7500_SF7', 'SONICFLAG_CSAT3B_SF7', 'IRGAFLAG_LI7500_SF7']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_SF7",
                      'Uy_CSAT3B':"Uy_CSAT3B_SF7",
@@ -524,7 +532,7 @@ class fast_processing_engine():
                 }
                 
             elif fts.date() > pd.Timestamp("2019-05-19").date():
-                cols_to_add = ["DIAG_CSAT3B_SF7", "FLAG_CSAT3B_SF7", 'TCELL_LI7500_SF7']
+                cols_to_add = ["DIAG_CSAT3B_SF7", "SONICFLAG_CSAT3B_SF7", 'TCELL_LI7500_SF7', 'IRGAFLAG_LI7500_SF7']
                 renaming_dict = {
                      'Ux_CSAT3B':"Ux_CSAT3B_SF7",
                      'Uy_CSAT3B':"Uy_CSAT3B_SF7",
@@ -541,7 +549,7 @@ class fast_processing_engine():
                 return df
         elif site == 'UF3': 
             if fts.date() > pd.Timestamp("2019-02-13").date():
-                    cols_to_add = ['FLAG_SON_UF3']
+                    cols_to_add = ['SONICFLAG_SON_UF3', 'IRGAFLAG_IRGA_UF3']
                     renaming_dict = {
                         'Ux': 'Ux_SON_UF3',
                         'Uy': 'Uy_SON_UF3',
@@ -569,15 +577,15 @@ class fast_processing_engine():
         # how to process diagnostic bits for each instrument
         diag_dict = {
             # CSAT3: 15-bit word. Bits 12-15 are HIGH iff invalid msmt occurs, so detect when x > 0b000011111111111
-            'CSAT3': {f'FLAG_CSAT3_{site}': lambda x: np.greater(x[f'DIAG_CSAT3_{site}'], 4095).astype(int)},
+            'CSAT3': {f'SONICFLAG_CSAT3_{site}': lambda x: np.greater(x[f'DIAG_CSAT3_{site}'], 4095).astype(int)},
             # CSAT3B: 9-bit word. Nonzero iff invalid msmt occurs
-            'CSAT3B': {f'FLAG_CSAT3B_{site}': lambda x: np.greater(x[f'DIAG_CSAT3B_{site}', 0]).astype(int)},
+            'CSAT3B': {f'SONICFLAG_CSAT3B_{site}': lambda x: np.greater(x[f'DIAG_CSAT3B_{site}'], 0).astype(int)},
             # IRGASON Gas: 23-bit word. Nonzero iff invalid msmt occurs. Alternatively, use bit 0
-            'IRGA': {f'FLAG_IRGA_{site}': lambda x: np.bitwise_and(x[f'DIAG_IRGA_{site}'], 1).astype(int)},
+            'IRGA': {f'IRGAFLAG_IRGA_{site}': lambda x: np.bitwise_and(x[f'DIAG_IRGA_{site}'], 1).astype(int)},
             # IRGASON Sonic:  6-bit word. Nonzero iff invalid msmt occurs
-            'SON': {f'FLAG_SON_{site}': lambda x: np.greater(x[f'DIAG_SON_{site}', 0]).astype(int)},
+            'SON': {f'SONICFLAG_SON_{site}': lambda x: np.greater(x[f'DIAG_SON_{site}'], 0).astype(int)},
             # LI-7500: 8-bit word. Bits 4-7 are LOW iff an invalid msmt occurs, so detect when x < 0b11110000
-            'LI7500': {f'FLAG_LI7500_{site}': lambda x: np.less(x[f'DIAG_LI7500_{site}'], 240).astype(int)}
+            'LI7500': {f'IRGAFLAG_LI7500_{site}': lambda x: np.less(x[f'DIAG_LI7500_{site}'], 240).astype(int)}
         }
         
         # search all columns in dataframe
@@ -594,7 +602,7 @@ class fast_processing_engine():
                 # example: site = NF17, instr = CSAT3
                 # df.assign(**diag_dict['CSAT3']) 
                 # gives 
-                # df.assign({'FLAG_CSAT3_NF17': lambda x: np.greater(x[f'DIAG_CSAT3_{site}'], 4095).astype(int)})
+                # df.assign({'SONICFLAG_CSAT3_NF17': lambda x: np.greater(x[f'DIAG_CSAT3_{site}'], 4095).astype(int)})
                 df = df.assign(**diag_dict[instr])
                 
         return df  
@@ -602,7 +610,7 @@ class fast_processing_engine():
     def summary_template(self):
         # coordinates for creating an xr dataset. 
         # dataset sub-array names are given by summary_cols
-        summary_cols = {'Ux':0, 'Uy':1, 'Uz':2, 'Ts':3, 'CO2':4, 'H2O':5, 'PCELL':6, 'TCELL':7, 'FLAG':8}
+        summary_cols = {'Ux':0, 'Uy':1, 'Uz':2, 'Ts':3, 'CO2':4, 'H2O':5, 'PCELL':6, 'TCELL':7, 'IRGAFLAG':8, 'SONICFLAG':9}
         # site coordinates given by summary_sites
         summary_sites = {site:i for i, site in enumerate(self.site_info)}
         # edge case: if summary_sites is N-long and contains {'NF17':i}, add a new element {'NF7':N + 1}
@@ -619,10 +627,10 @@ class fast_processing_engine():
         with warnings.catch_warnings():
                     warnings.simplefilter("ignore", category=RuntimeWarning)
                     for icolname, colname in enumerate(dat.columns):
-                        if colname[0] in 'UTCHPF':  #check that this col is one of Ux/y/z, Ts/TCELL, CO2, H2O, PCELL, Flag
+                        if colname[0] in 'UTCHPIS':  #check that this col is one of Ux/y/z, Ts/TCELL, CO2, H2O, PCELL, Flags
                         # place stats into position (time, :, site, var)
                             site = colname.split('_')[-1]
-                            col_id = colname.split('_')[0]
+                            col_id = colname.split('_')[0] 
                             # summary_arr has dims (time, stat, site, variabe)
                             summary_arr[idfts, :, summary_sites[site], summary_cols[col_id]] = [
                                 np.nanmean(dat[colname]),
