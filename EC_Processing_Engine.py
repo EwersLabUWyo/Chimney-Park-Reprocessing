@@ -260,10 +260,10 @@ class fast_processing_engine():
                 
             # write the final data file to a csv using PyArrow
             pa_table = csv.write_csv(
-                pa.Table.from_pandas(dat[dat.columns[1:]], 
+                pa.Table.from_pandas(dat, 
                                     preserve_index=False, 
                                     nthreads=4, 
-                                    schema=pa.schema([pa.field(colname, pa.float32()) for colname in dat.columns[1:]])),
+                                    schema=pa.schema([pa.field(colname, pa.float32()) for colname in dat.columns])),
                 desired_fn,
             )
         
@@ -289,7 +289,7 @@ class fast_processing_engine():
             )
             self.summary['fns'] = xr.DataArray(self.desired_fns, coords={"TIMESTAMP": self.desired_file_tss})
         
-        return
+        return dat
     
     def process_interval(self, idfts, dfts, ifile, desired_fn):
         '''processes one timestamp worth of data across multiple sites. Reads in one timestamp worth of data, outputs one timestamp worth of data, and returns metadata and raw output data'''
@@ -353,7 +353,7 @@ class fast_processing_engine():
         
         for site in self.site_info:
             # get the actual file names
-            self.site_info[site]['fns'] = list(self.site_info[site]['converted_path'].glob('TOA5*.dat'))
+            self.site_info[site]['fns'] = list(self.site_info[site]['converted_path'].glob('TOA5*Hz*.dat'))
           
             # get raw file timestamps from the raw file names
             file_tss = []
