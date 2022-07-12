@@ -262,8 +262,12 @@ class fast_processing_engine():
         
         self.blogger.debug('Created loggers')
         
-    def process_fast_files(self):
-        """reads in raw fast files, and combines/standardizes them to be continuous."""
+    def process_fast_files(self, extras='all'):
+        """reads in raw fast files, and combines/standardizes them to be continuous.
+        extras - list or list of str. 
+            Determines which summary/extra functions to employ. If 'all' is selected, then every extra function is used
+            
+            individual options are: summary, spectrum"""
         
         # sanity check
         print("Processing data from...")
@@ -278,14 +282,15 @@ class fast_processing_engine():
         self.find_fast_files()
         self.tlogger.info(f'Found fast files in {1000*(timer() - t0)}ms')
         
-        # create a template for summary data, dims (time, stats, site, )
-        summary_cols = {'Ux':0, 'Uy':1, 'Uz':2, 'Ts':3, 'CO2':4, 'H2O':5, 'PCELL':6, 'TCELL':7, 'flag':8}
-        summary_sites = {site:i for i, site in enumerate(self.site_info)}
-        # edge case
-        if 'NF17' in summary_sites:
-            summary_sites['NF7'] = max(summary_sites.values()) + 1
-        summary_arr = np.full(shape=(len(self.desired_file_tss), 5, len(summary_sites), len(summary_cols)),
-                             fill_value = np.nan)
+        if extras == 'all' or 'summary' in extras:
+            # create a template for summary data, dims (time, stats, site, )
+            summary_cols = {'Ux':0, 'Uy':1, 'Uz':2, 'Ts':3, 'CO2':4, 'H2O':5, 'PCELL':6, 'TCELL':7, 'flag':8}
+            summary_sites = {site:i for i, site in enumerate(self.site_info)}
+            # edge case
+            if 'NF17' in summary_sites:
+                summary_sites['NF7'] = max(summary_sites.values()) + 1
+            summary_arr = np.full(shape=(len(self.desired_file_tss), 5, len(summary_sites), len(summary_cols)),
+                                 fill_value = np.nan)
         
         # initialize the file metadata template
         self.metadata_template()
@@ -304,101 +309,32 @@ class fast_processing_engine():
         pbar = tqdm(self.desired_file_tss)
         for idfts, dfts in enumerate(pbar):
             pbar.set_description(f'Processing {dfts}')
-            
-#             # prep the output file: 
-#             # generate the desired time index for that file
-#             tloop = timer()
-#             ti = timer()
-#             desired_time_index = pd.date_range(dfts + self.acq_period, periods=self.n_records, freq=self.acq_period)
-#             dat = pd.DataFrame(desired_time_index, columns=['TIMESTAMP'])
-#             dat.set_index('TIMESTAMP', inplace=True)
-#             self.tlogger.info(f'Built:{1000*(timer() - ti):.4f}')
-            
-#             # generate output file name:
-#             # yyyy-mm-dd hh:MM --> yyyy_mm_dd_hh:MM --> yyyy_mm_dd_hhMM
-#             dfts_str = re.sub('-| ', '_', str(dfts))
-#             dfts_str = re.sub(':', '', dfts_str)[:-2]
-#             desired_fn = self.out_path / f'{dfts_str}.csv'
-            
-#             # now loop through each site at this timestamp. For each site, search for all qualified files for this timestamp.
-#             for site in self.site_info:
-#                 ti = timer()
-#                 next_file_ts = dfts + pd.Timedelta(f'{self.file_length} Min')
-#                 next_fns, next_file_tss = [], []
-#                 try:
-#                     while self.site_info[site]['file_tss_temp'][0] < next_file_ts:
-#                         next_fns.append(self.site_info[site]['fns_temp'].pop(0))
-#                         next_file_tss.append(self.site_info[site]['file_tss_temp'].pop(0))
-#                 # when the temp lists empty, we'll get an indexerror
-#                 except IndexError as err:
-#                     pass
-#                 self.tlogger.info(f'Next:{1000*(timer() - ti):.4f}')
-                
-                
-#                 # combine qualified files into one dataframe: 
-#                 # apply header changes, calibrations, raw data corrections, record file metadata, etc
-#                 ti = timer()
-#                 # if none are found, make an empty dataframe
-#                 if next_fns == []:
-#                     rawdat = self.make_empty(dfts, site)
-#                     rawdat = rawdat.loc[:, rawdat.columns != 'RECORD']
-#                     self.tlogger.info(f'No data file to read in')
-#                     self.tlogger.info(f'Made empty datafile in {1000*(timer() - ti):.4f}ms')
-#                 else:
-#                     for i, fn, ts in zip(range(len(next_fns)), next_fns, next_file_tss):
-#                         # combine files
-#                         if i == 0:
-#                             rawdat = self.process_file(fn, site, ts)
-#                         else:
-#                             rawdat_tmp = self.process_file(fn, site, ts)
-#                             rawdat = pd.concat([rawdat, rawdat_tmp])
-#                         # record metadata
-#                         with open(fn) as f:
-#                             metadata_row = [dfts, desired_fn, ts, fn] + f.readline()[1:-1].split('","')
-#                             self.site_info[site]['rawfile_metadata'].iloc[ifile[site]] = metadata_row
-#                         ifile[site] += 1  
-                                
-#                     self.tlogger.info(f'Processed:{1000*(timer() - ti)}')
-
-#                 # now combine merge files across sites
-#                 dat = dat.merge(rawdat, how='outer', left_index=True, right_index=True, sort=True)
-            
-#             # write the final data file to a csv using PyArrow
-#             ti = timer()
-#             pa_table = csv.write_csv(
-#                 pa.Table.from_pandas(dat[dat.columns[1:]], 
-#                                      preserve_index=False, 
-#                                      nthreads=4, 
-#                                      schema=pa.schema([pa.field(colname, pa.float32()) for colname in dat.columns[1:]])),
-#                 desired_fn,
-#             )
-#             
-#             self.tlogger.info(f'Wrote:{1000*(timer() - ti):.4f} Disk:{os.stat(desired_fn).st_size/1e6:.4f} Memory:{dat.memory_usage().sum()/1e6:.4f}')
-#             self.tlogger.info(f'Comleted:{1000*(timer() - tloop)}')
 
             dat = self.process_interval(idfts, dfts, ifile)
             
             # write summary stats for analysis and QA/QC
-            ti = timer()
-            summary_arr = self.update_summary(dat, summary_arr, summary_cols, summary_sites, idfts, site)
-            self.tlogger.info(f'Summary:{1000*(timer() - ti):.4f}')
+            if extras == 'all' or 'summary' in extras:
+                ti = timer()
+                summary_arr = self.update_summary(dat, summary_arr, summary_cols, summary_sites, idfts, site)
+                self.tlogger.info(f'Summary:{1000*(timer() - ti):.4f}')
                         
-        # after whole run is complete: convert summary stats to an xarray    
-        self.summary = xr.Dataset(
-            data_vars={
-                colname:(['TIMESTAMP', 'STAT', 'SITE'], summary_arr[:, :, :, icolname]) 
-                for icolname, colname in enumerate(summary_cols)
-            },
-            coords={
-                'TIMESTAMP':self.desired_file_tss,
-                'STAT':['Avg', 'Max', 'Min', 'Std', 'Npc'],
-                'SITE':list(summary_sites.keys())
-            }
-        )
+        # after whole run is complete: convert summary stats to an xarray
+        if extras == 'all' or 'summary' in extras:
+            self.summary = xr.Dataset(
+                data_vars={
+                    colname:(['TIMESTAMP', 'STAT', 'SITE'], summary_arr[:, :, :, icolname]) 
+                    for icolname, colname in enumerate(summary_cols)
+                },
+                coords={
+                    'TIMESTAMP':self.desired_file_tss,
+                    'STAT':['Avg', 'Max', 'Min', 'Std', 'Npc'],
+                    'SITE':list(summary_sites.keys())
+                }
+            )
         
         self.tlogger.info(f'Run complete. Processed {ifile} files across {len(self.site_info)} sites in {timer() - t0}s')
         
-        return
+        return dat
     
     def process_interval(self, idfts, dfts, ifile):
         '''processes one timestamp worth of data across multiple sites. Reads in one timestamp worth of data, outputs one timestamp worth of data, and returns metadata and raw output data'''
@@ -793,3 +729,26 @@ class fast_processing_engine():
         ifile[site] += 1  
 
         return ifile
+    
+    def spectrum(dat):
+        
+        for site in self.site_info:
+            # for each site, select the columns W, Ts, rc, rv
+            cosp_cols = []
+            for col in self.site_info[site]['final_header']:
+                pref, suf = col.split('_')[0], col.split('_')[-1]
+                if pref in ['Uz', 'rho', 'Ts'] and suff == site:
+                    cosp_cols.append(col)
+                if pref == 'Uz' and suff == site:
+                    W_col = col
+            # compute fft and scale by 1/n, in parallel.
+            cosp_df = fft.fft(dat[cosp_cols], axis=0, norm='forward', workers=-1)[1:]
+            # Remove mean and compute cospectra
+            cosp_df = np.sqrt(np.sum((cosp_df[W_col].values*np.conj(cosp_df)).real))
+            cosp_df['f'] = fft.fftfreq(self.n_records, d=1/acq_freq)
+            # bin by decade
+            bin_edges = 10**np.linspace(np.log10(cosp_df['f']), np.log10(cosp_df['f'].max()), 10)
+            bin_centers = 10**(np.log10(bin_edges[:-1]) + np.diff(np.log10(bin_edges))/2)
+            binned_cosp, _, _ = stats.binned_statistic(x=cosp_df['f'], values=cosp_df.values.T, bins=bin_edges)
+            
+        
