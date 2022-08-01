@@ -69,4 +69,21 @@ The Use the python JupyterNotebook to fix these. This will open up each file, th
 Note that EddyPro doesn't actually care about header names, just the number of
 lines. This re-organization is for consistancy only.
 
+## EddyPro
+
+### 2. Running EddyPro
+Once the project has been created, it can be run from the command line.
+
+1. `cd` into the directory containing the `.eddypro` file
+2. Create two new directories here:
+	* `./tmp`
+	* `./output`
+2. Run the command `eddypro_rp` using the options
+	* `-s mac` for MacOS or `-s linux` for Linux (teton)  
+	* `-m desktop`
+	* `-e ./`
+	* For project, use `./<.eddypro>`: the local path to the `.eddypro` file
+	* N.B. The `-e` option claims to only work for embedded mode, but also is necessary for desktop mode!
+3. Run the command `eddypro_fcc` using the same options
+
 

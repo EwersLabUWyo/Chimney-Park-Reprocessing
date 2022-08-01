@@ -15,7 +15,7 @@ import pyarrow.csv as csv
 import pyarrow.compute as pc
 import xarray as xr
 
-class fast_processing_engine():
+class ec_processing_engine():
     """This is a class to automatically process raw 10Hz files that have already been run through cardconvert
     
     ...
@@ -63,7 +63,7 @@ class fast_processing_engine():
     make_empty - creates a blank fast file dataframe for the case that no valid files were found for a given time period. Used by multiple class methods
     """
     
-    def __init__(self, converted_dirs, file_length, acq_freq, start_time, end_time, site_names, out_dir):
+    def __init__(self, converted_dirs, met_dirs, file_length, acq_freq, start_time, end_time, site_names, out_dir):
         """converted_dirs - list of str
             directories containing raw converted TOA5 files. Each directory contains all the data to process from a given site, with no sub-directories. 
             For example, the following is an acceptable storage format:
@@ -72,6 +72,8 @@ class fast_processing_engine():
             But the following is not accepted:
                 Converted/2021/file1.dat
                 Converted/2022/file2.dat
+        met_dirs - list of str
+            directories containing raw biomet files. Each directory contains all the data to process from a given site, with no sub-directories. 
         file_length - int
             file length in minutes
         acq_freq - int
@@ -91,13 +93,13 @@ class fast_processing_engine():
             'NF17': [
                 'TIMESTAMP',
                 'RECORD',
-                'Ux_CSAT3_NF17',
-                'Uy_CSAT3_NF17',
-                'Uz_CSAT3_NF17',
+                'U_CSAT3_NF17',
+                'V_CSAT3_NF17',
+                'W_CSAT3_NF17',
                 'Ts_CSAT3_NF17',
-                'Ux_CSAT3_NF7',
-                'Uy_CSAT3_NF7',
-                'Uz_CSAT3_NF7',
+                'U_CSAT3_NF7',
+                'V_CSAT3_NF7',
+                'W_CSAT3_NF7',
                 'Ts_CSAT3_NF7',
                 'CO2_LI7500_NF17',
                 'H2O_LI7500_NF17',
@@ -113,9 +115,9 @@ class fast_processing_engine():
             'NF3': [
                 'TIMESTAMP',
                 'RECORD',
-                'Ux_CSAT3B_NF3',
-                'Uy_CSAT3B_NF3',
-                'Uz_CSAT3B_NF3',
+                'U_CSAT3B_NF3',
+                'V_CSAT3B_NF3',
+                'W_CSAT3B_NF3',
                 'Ts_CSAT3B_NF3',
                 'CO2_LI7500_NF3',
                 'H2O_LI7500_NF3',
@@ -129,9 +131,9 @@ class fast_processing_engine():
             'SF4': [
                 'TIMESTAMP',
                 'RECORD',
-                'Ux_SON_SF4',
-                'Uy_SON_SF4',
-                'Uz_SON_SF4',
+                'U_SON_SF4',
+                'V_SON_SF4',
+                'W_SON_SF4',
                 'Ts_SON_SF4',
                 'CO2_IRGA_SF4',
                 'H2O_IRGA_SF4',
@@ -145,9 +147,9 @@ class fast_processing_engine():
             'SF7': [
                 'TIMESTAMP',
                 'RECORD',
-                'Ux_CSAT3B_SF7',
-                'Uy_CSAT3B_SF7',
-                'Uz_CSAT3B_SF7',
+                'U_CSAT3B_SF7',
+                'V_CSAT3B_SF7',
+                'W_CSAT3B_SF7',
                 'Ts_CSAT3B_SF7',
                 'CO2_LI7500_SF7',
                 'H2O_LI7500_SF7',
@@ -161,9 +163,9 @@ class fast_processing_engine():
             'UF3': [
                 'TIMESTAMP',
                 'RECORD',
-                'Ux_SON_UF3',
-                'Uy_SON_UF3',
-                'Uz_SON_UF3',
+                'U_SON_UF3',
+                'V_SON_UF3',
+                'W_SON_UF3',
                 'Ts_SON_UF3',
                 'CO2_IRGA_UF3',
                 'H2O_IRGA_UF3',
@@ -178,13 +180,15 @@ class fast_processing_engine():
         
         # all site-specific metadata is stored here
         self.site_info = {site:{"fns":None, 
+                                "met_fns":None,
                                 "file_tss":None, 
-                                "converted_path":Path(converted_dir), 
+                                "converted_path":Path(converted_dir),
+                                "met_path":Path(met_dir),
                                 "n_files_converted":None,
                                 "rawfile_metadata":None,
                                 "final_header":final_headers[site]
                                }
-                         for site, converted_dir in zip(site_names, converted_dirs)}
+                         for site, converted_dir, met_dir in zip(site_names, converted_dirs, met_dirs)}
         
         # convert user-provided start/end times
         self.start_time = pd.to_datetime(start_time)
@@ -433,13 +437,13 @@ class fast_processing_engine():
             if fts.date() < pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["PCELL_LI7500_NF17", "DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "SONICFLAG_CSAT3_NF17", "SONICFLAG_CSAT3_NF7", 'TCELL_LI7500_NF17', 'IRGAFLAG_LI7500_NF17']
                 renaming_dict = {
-                     'Ux_CSAT3_17m':"Ux_CSAT3_NF17",
-                     'Uy_CSAT3_17m':"Uy_CSAT3_NF17",
-                     'Uz_CSAT3_17m':"Uz_CSAT3_NF17",
+                     'Ux_CSAT3_17m':"U_CSAT3_NF17",
+                     'Uy_CSAT3_17m':"V_CSAT3_NF17",
+                     'Uz_CSAT3_17m':"W_CSAT3_NF17",
                      'Ts_CSAT3_17m':"Ts_CSAT3_NF17",
-                     'Ux_CSAT3_7m':"Ux_CSAT3_NF7",
-                     'Uy_CSAT3_7m':"Uy_CSAT3_NF7",
-                     'Uz_CSAT3_7m':"Uz_CSAT3_NF7",
+                     'Ux_CSAT3_7m':"U_CSAT3_NF7",
+                     'Uy_CSAT3_7m':"V_CSAT3_NF7",
+                     'Uz_CSAT3_7m':"W_CSAT3_NF7",
                      'Ts_CSAT3_7m':"Ts_CSAT3_NF7",
                      'rho_c_LI7500':"CO2_LI7500_NF17",
                      'rho_v_LI7500':"H2O_LI7500_NF17",
@@ -450,13 +454,13 @@ class fast_processing_engine():
             elif fts.date() > pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["DIAG_CSAT3_NF17", "DIAG_CSAT3_NF7", "SONICFLAG_CSAT3_NF17", "SONICFLAG_CSAT3_NF7", 'TCELL_LI7500_NF17', 'IRGAFLAG_LI7500_NF17']
                 renaming_dict = {
-                     'Ux_CSAT3_17m':"Ux_CSAT3_NF17",
-                     'Uy_CSAT3_17m':"Uy_CSAT3_NF17",
-                     'Uz_CSAT3_17m':"Uz_CSAT3_NF17",
+                     'Ux_CSAT3_17m':"U_CSAT3_NF17",
+                     'Uy_CSAT3_17m':"V_CSAT3_NF17",
+                     'Uz_CSAT3_17m':"W_CSAT3_NF17",
                      'Ts_CSAT3_17m':"Ts_CSAT3_NF17",
-                     'Ux_CSAT3_7m':"Ux_CSAT3_NF7",
-                     'Uy_CSAT3_7m':"Uy_CSAT3_NF7",
-                     'Uz_CSAT3_7m':"Uz_CSAT3_NF7",
+                     'Ux_CSAT3_7m':"U_CSAT3_NF7",
+                     'Uy_CSAT3_7m':"V_CSAT3_NF7",
+                     'Uz_CSAT3_7m':"W_CSAT3_NF7",
                      'Ts_CSAT3_7m':"Ts_CSAT3_NF7",
                      'rho_c_LI7500':"CO2_LI7500_NF17",
                      'rho_v_LI7500':"H2O_LI7500_NF17",
@@ -473,9 +477,9 @@ class fast_processing_engine():
             if fts.date() < pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["PCELL_LI7500_NF3", 'TCELL_LI7500_NF3', 'SONICFLAG_CSAT3B_NF3', 'IRGAFLAG_LI7500_NF3']
                 renaming_dict = {
-                     'Ux_CSAT3B':"Ux_CSAT3B_NF3",
-                     'Uy_CSAT3B':"Uy_CSAT3B_NF3",
-                     'Uz_CSAT3B':"Uz_CSAT3B_NF3",
+                     'Ux_CSAT3B':"U_CSAT3B_NF3",
+                     'Uy_CSAT3B':"V_CSAT3B_NF3",
+                     'Uz_CSAT3B':"W_CSAT3B_NF3",
                      'Ts_CSAT3B':"Ts_CSAT3B_NF3",
                      'rho_c_LI7500':"CO2_LI7500_NF3",
                      'rho_cv_LI7500':"H2O_LI7500_NF3",
@@ -487,9 +491,9 @@ class fast_processing_engine():
             elif fts.date() > pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["DIAG_CSAT3B_NF3", "SONICFLAG_CSAT3B_NF3", 'TCELL_LI7500_NF3', 'IRGAFLAG_LI7500_NF3']
                 renaming_dict = {
-                     'Ux_CSAT3B':"Ux_CSAT3B_NF3",
-                     'Uy_CSAT3B':"Uy_CSAT3B_NF3",
-                     'Uz_CSAT3B':"Uz_CSAT3B_NF3",
+                     'Ux_CSAT3B':"U_CSAT3B_NF3",
+                     'Uy_CSAT3B':"V_CSAT3B_NF3",
+                     'Uz_CSAT3B':"W_CSAT3B_NF3",
                      'Ts_CSAT3B':"Ts_CSAT3B_NF3",
                      'rho_c_LI7500':"CO2_LI7500_NF3",
                      'rho_v_LI7500':"H2O_LI7500_NF3",
@@ -505,9 +509,9 @@ class fast_processing_engine():
             if fts.date() < pd.Timestamp("2100-11-19").date():
                 cols_to_add = ['SONICFLAG_SON_SF4', 'IRGAFLAG_IRGA_SF4']
                 renaming_dict = {
-                    'Ux': 'Ux_SON_SF4',
-                    'Uy': 'Uy_SON_SF4',
-                    'Uz': 'Uz_SON_SF4',
+                    'Ux': 'U_SON_SF4',
+                    'Uy': 'V_SON_SF4',
+                    'Uz': 'W_SON_SF4',
                     'Ts': 'Ts_SON_SF4',
                     'diag_sonic': 'DIAG_SON_SF4',
                     'CO2': 'CO2_IRGA_SF4',
@@ -521,9 +525,9 @@ class fast_processing_engine():
             if fts.date() < pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["PCELL_LI7500_SF7", 'TCELL_LI7500_SF7', 'SONICFLAG_CSAT3B_SF7', 'IRGAFLAG_LI7500_SF7']
                 renaming_dict = {
-                     'Ux_CSAT3B':"Ux_CSAT3B_SF7",
-                     'Uy_CSAT3B':"Uy_CSAT3B_SF7",
-                     'Uz_CSAT3B':"Uz_CSAT3B_SF7",
+                     'Ux_CSAT3B':"U_CSAT3B_SF7",
+                     'Uy_CSAT3B':"V_CSAT3B_SF7",
+                     'Uz_CSAT3B':"W_CSAT3B_SF7",
                      'Ts_CSAT3B':"Ts_CSAT3B_SF7",
                      'rho_c_LI7500':"CO2_LI7500_SF7",
                      'rho_v_LI7500':"H2O_LI7500_SF7",
@@ -534,9 +538,9 @@ class fast_processing_engine():
             elif fts.date() > pd.Timestamp("2019-05-19").date():
                 cols_to_add = ["DIAG_CSAT3B_SF7", "SONICFLAG_CSAT3B_SF7", 'TCELL_LI7500_SF7', 'IRGAFLAG_LI7500_SF7']
                 renaming_dict = {
-                     'Ux_CSAT3B':"Ux_CSAT3B_SF7",
-                     'Uy_CSAT3B':"Uy_CSAT3B_SF7",
-                     'Uz_CSAT3B':"Uz_CSAT3B_SF7",
+                     'Ux_CSAT3B':"U_CSAT3B_SF7",
+                     'Uy_CSAT3B':"V_CSAT3B_SF7",
+                     'Uz_CSAT3B':"W_CSAT3B_SF7",
                      'Ts_CSAT3B':"Ts_CSAT3B_SF7",
                      'rho_c_LI7500':"CO2_LI7500_SF7",
                      'rho_v_LI7500':"H2O_LI7500_SF7",
@@ -551,9 +555,9 @@ class fast_processing_engine():
             if fts.date() > pd.Timestamp("2019-02-13").date():
                     cols_to_add = ['SONICFLAG_SON_UF3', 'IRGAFLAG_IRGA_UF3']
                     renaming_dict = {
-                        'Ux': 'Ux_SON_UF3',
-                        'Uy': 'Uy_SON_UF3',
-                        'Uz': 'Uz_SON_UF3',
+                        'Ux': 'U_SON_UF3',
+                        'Uy': 'V_SON_UF3',
+                        'Uz': 'W_SON_UF3',
                         'Ts': 'Ts_SON_UF3',
                         'diag_sonic': 'DIAG_SON_UF3',
                         'CO2': 'CO2_IRGA_UF3',
@@ -685,26 +689,109 @@ class fast_processing_engine():
 
         return ifile
     
-    def spectrum(self, dat):
+#     def spectrum(self, dat):
         
+#         for site in self.site_info:
+#             # for each site, select the columns W, Ts, rc, rv
+#             cosp_cols = []
+#             for col in self.site_info[site]['final_header']:
+#                 pref, suf = col.split('_')[0], col.split('_')[-1]
+#                 if pref in ['Uz', 'rho', 'Ts'] and suff == site:
+#                     cosp_cols.append(col)
+#                 if pref == 'Uz' and suff == site:
+#                     W_col = col
+#             # compute fft and scale by 1/n, in parallel.
+#             cosp_df = fft.fft(dat[cosp_cols], axis=0, norm='forward', workers=-1)[1:]
+#             # Remove mean and compute cospectra
+#             cosp_df = np.sqrt(np.sum((cosp_df[W_col].values*np.conj(cosp_df)).real))
+#             cosp_df['f'] = fft.fftfreq(self.n_records, d=1/acq_freq)
+#             # bin by decade
+#             bin_edges = 10**np.linspace(np.log10(cosp_df['f']), np.log10(cosp_df['f'].max()), 10)
+#             bin_centers = 10**(np.log10(bin_edges[:-1]) + np.diff(np.log10(bin_edges))/2)
+#             binned_cosp, _, _ = stats.binned_statistic(x=cosp_df['f'], values=cosp_df.values.T, bins=bin_edges)
+            
+    def find_slow_files(self):
+        """find all the raw 30-min met data files that the user wants to process and place them in the site info dict, ordered by timestamp."""
+
+        # get the timestamps we want create, which may not align with the raw file timestamps
         for site in self.site_info:
-            # for each site, select the columns W, Ts, rc, rv
-            cosp_cols = []
-            for col in self.site_info[site]['final_header']:
-                pref, suf = col.split('_')[0], col.split('_')[-1]
-                if pref in ['Uz', 'rho', 'Ts'] and suff == site:
-                    cosp_cols.append(col)
-                if pref == 'Uz' and suff == site:
-                    W_col = col
-            # compute fft and scale by 1/n, in parallel.
-            cosp_df = fft.fft(dat[cosp_cols], axis=0, norm='forward', workers=-1)[1:]
-            # Remove mean and compute cospectra
-            cosp_df = np.sqrt(np.sum((cosp_df[W_col].values*np.conj(cosp_df)).real))
-            cosp_df['f'] = fft.fftfreq(self.n_records, d=1/acq_freq)
-            # bin by decade
-            bin_edges = 10**np.linspace(np.log10(cosp_df['f']), np.log10(cosp_df['f'].max()), 10)
-            bin_centers = 10**(np.log10(bin_edges[:-1]) + np.diff(np.log10(bin_edges))/2)
-            binned_cosp, _, _ = stats.binned_statistic(x=cosp_df['f'], values=cosp_df.values.T, bins=bin_edges)
+            # get the actual file names
+            self.site_info[site]['met_fns'] = list(self.site_info[site]['met_path'].glob('202*/Converted/TOA5*Met30Min.dat'))
+            self.site_info[site]['slowflux_fns'] = list(self.site_info[site]['met_path'].glob('202*/Converted/TOA5*Flux30Min*.dat'))
+
+    def combine_slow_files(self):
+        self.find_slow_files()
+
+        for site in self.site_info:
+            met_dat = (
+                pd.concat([pd.read_csv(met_fn, skiprows=[0,2,3], na_values='NAN') for met_fn in self.site_info[site]['met_fns']])
+                .set_index('TIMESTAMP')
+                .sort_index()
+            )
+
+            slowflux_dat = (
+                pd.concat([pd.read_csv(slowflux_fn, skiprows=[0,2,3], na_values='NAN') for slowflux_fn in self.site_info[site]['slowflux_fns']])
+                .set_index('TIMESTAMP')
+                .sort_index()
+            )
+
+            raw_biomet_dat = met_dat.merge(slowflux_dat, how='inner', left_index=True, right_index=True)
+
+            if site=='NF17':
+                cols_to_add = ['Rd', 'Rr', 'Rg', 'R_uva', 'R_uvb', 'SWbc', 'SWdif', 'PPFDd', 'PPFDr', 'PPFDbc', 'P', 'P_snow', 'SNOWd', 'MWS', 'WD', 'Tbole', 'SapFlow', 'StemFlow', 'Ts', 'SHF', 'SWC']
+
+                renaming_dict = {
+                    "P_LI7500_Avg":"Pa",
+                    "AirT_17m_Avg":'Ta',
+                    "AirT_7m_Avg":'Tbc',
+                    "RH_17m":"RH",
+                    "SurfT_canopy_Avg":"Tc",
+                    "SWD_Avg":"SWin",
+                    "SWU_Avg":"SWout",
+                    "LWD_cor_Avg":"LWin",
+                    "LWU_cor_Avg":"LWout",
+                    "Rn_Avg":"Rn",
+                    "PAR_up_17m_Avg":"PPFD"
+                }
+
+                biomet_dat = (raw_biomet_dat
+                              .reindex(columns=list(raw_biomet_dat.columns) + cols_to_add, fill_value=np.nan)
+                             .rename(columns=renaming_dict))
+                biomet_dat = biomet_dat[['Rd', 'Rr', 'R_uva', 'R_uvb', 'SWbc', 'SWdif', 'PPFDd', 'PPFDr', 'PPFDbc', 'P', 'P_snow', 'SNOWd', 'MWS', 'WD', 'Tbole', 'SapFlow', 'StemFlow', 'Ts', 'SHF', 'SWC', 'Pa', 'Ta', 'Tbc', 'RH', 'Tc', 'SWin', 'SWout', 'LWin', 'LWout', 'Rn', 'PPFD', 'Rg']]
+
+                # apply some corrections
+                # compute wind direction from X and Y wind speeds, then apply azimuth of instrument
+                biomet_dat['WD'] = (np.arctan2(raw_biomet_dat['Uy_CSAT3_17m_Avg'], raw_biomet_dat['Ux_CSAT3_17m_Avg'])*180/np.pi + 90)%360
+
+                # Apply stefan-boltzmann law properly
+                biomet_dat['LWin'] = biomet_dat['LWin'] + 5.67e-8*((raw_biomet_dat['Tb_Avg'] + 273.15)**4 - raw_biomet_dat['Tb_Avg']**4)
+                
+                # add global radiation
+                biomet_dat['Rg'] = biomet_dat['SWin']
+                
+                # units
+                biomet_dat['Pa'] = biomet_dat['Pa']*1000
+                biomet_dat['Ta'] = biomet_dat['Ta'] + 273.15
+                biomet_dat['Tbc'] = biomet_dat['Tbc'] + 273.15
+                biomet_dat['Tc'] = biomet_dat['Tc'] + 273.15
+                
+                # reformat timestamp to yyyy-mm-dd HHMM
+                biomet_dat.reset_index(inplace=True)
+                biomet_dat.loc[:,'TIMESTAMP'] = ["".join(ts.split(":")[:-1]) for ts in list(biomet_dat['TIMESTAMP'].astype(str))]
+                
+                with open(self.out_path / '../biomet.csv', 'w') as biomet_file:
+                    biomet_file.write(
+                    "TIMESTAMP_1,Rd,Rr,R_uva,R_uvb,SWbc,SWdif,PPFDd,PPFDr,PPFDbc,P,P_snow,SNOWd,MWS,WD,Tbole,SapFlow,StemFlow,Ts,SHF,SWC,Pa,Ta,Tbc,RH,Tc,SWin,SWout,LWin,LWout,Rn,PPFD,Rg\nyyyy-mm-dd HHMM,W+1m-2,W+1m-2,W+1m-2,W+1m-2,W+1m-2,W+1m-2,umol+1m-2s-1,umol+1m-2s-1,m,m,m,m+1s-1,degrees,K,g+1h-1,g+1h-1,K,W+1m-2,m+3m-3,Pa,K,K,%,W+1m-2,W+1m-2,W+1m-2,W+1m-2,W+1m-2,umol+1m-2s-1,W+1m-2\n"
+                    )
+                biomet_dat.to_csv(self.out_path / '../biomet.csv', mode='a', header=False, index=False)
+                
+                
+                
+            
+            
+                    
+                    
+                    
             
 def main():
     return
