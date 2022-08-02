@@ -83,7 +83,7 @@ def load_flux30min(con, fns):
              sonic_7=re.compile(".*CSAT3_7m.*"),
              irga=re.compile(".*LI7500.*"),
              logger=re.compile(".*CR3000.*"))
-    table_names = ['sonic_NF_17_1', 'sonic_NF_7_1', 'irga_NF_17_1', 'status_NF_0_1']
+    table_names = ['sonic_NF_1700cm_1', 'sonic_NF_700cm_1', 'irga_NF_1700cm_1', 'status_NF_0cm_1']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions
@@ -138,7 +138,7 @@ def load_met30min(con, fns):
               ppfd_in=re.compile('^PAR_up.*'),
               ppfd_out=re.compile('^PAR_dn.*'))
 
-    table_names = ['hmp_NF_17_1', 'hmp_NF_12_1', 'hmp_NF_7_1', 'wind_NF_12_1', 'tcanopy_NF_17_1', 'netrad_NF_17_1', 'ppfd_NF_17_1', 'ppfd_NF_17_2']
+    table_names = ['hmp_NF_1700cm_1', 'hmp_NF_1200cm_1', 'hmp_NF_700cm_1', 'wind_NF_1200cm_1', 'tcanopy_NF_1700cm_1', 'netrad_NF_1700cm_1', 'ppfd_NF_1700cm_1', 'ppfd_NF_1700cm_2']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions
@@ -216,7 +216,7 @@ def load_pri1min(con, fns):
     rx = dict(pri_17=re.compile('.*_17m_.*'),
               pri_7=re.compile('.*_7m_.*'))
 
-    table_names = ['pri_NF_17_1', 'pri_NF_7_1']
+    table_names = ['pri_NF_1700cm_1', 'pri_NF_700cm_1']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions
@@ -248,10 +248,10 @@ def load_flux10Hz(con, fns):
         filenum, timestamp = fn_parts[4][4:], f'{fn_parts[5]}-{fn_parts[6]}-{fn_parts[7]} {fn_parts[8][:2]}:{fn_parts[8][2:]}'
         values = [(fn, filenum, timestamp,  'file')]
 
-        insert('fast_NF_17_1', values, con=con)
+        insert('fast_NF_1700cm_1', values, con=con)
 
 def main():
-    print(__name__, 'NF_17_EC_manager.py')
+    print(__name__, 'NF_1700_EC_manager.py')
 
 if __name__ == '__main__':
     main()

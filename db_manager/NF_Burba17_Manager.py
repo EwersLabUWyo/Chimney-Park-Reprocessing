@@ -37,7 +37,7 @@ def load_burba30min(con, fns):
     # instructions for subsetting instruments using a regex filter for each instrument
     rx = dict(burba=re.compile("^Birba.*|^TC.*"),
              logger=re.compile("^PTemp.*"))
-    table_names = ['burba_NF_17_1', 'status_NF_0_2']
+    table_names = ['burba_NF_1700cm_1', 'status_NF_0cm_2']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions

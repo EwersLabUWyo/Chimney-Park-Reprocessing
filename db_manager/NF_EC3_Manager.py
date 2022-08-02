@@ -53,7 +53,7 @@ def initialize(con, show=False):
     # SB111
     surft_cols = dict(tsurf='REAL', sbt='REAL')
     surft_units = dict(tsurf='C+1', sbt='C+1')
-    add_instrument(shortname='tcanopy', site=site, height=3,  instr_model='SB-111', rep=1, instr_sn=5063, comment='infrared radiometers', columns=surft_cols, units=surft_units, logger_sn=logger_sn, con=con, show=show)
+    add_instrument(shortname='tsurf', site=site, height=3,  instr_model='SB-111', rep=1, instr_sn=5063, comment='infrared radiometers', columns=surft_cols, units=surft_units, logger_sn=logger_sn, con=con, show=show)
 
     # Fast (10Hz) files
     fast_cols = dict(file='TEXT')
@@ -66,7 +66,7 @@ def load_flux30min(con, fns):
     rx = dict(sonic=re.compile(".*CSAT3B.*"),
              irga=re.compile(".*LI7500.*"),
              logger=re.compile(".*CR3000.*"))
-    table_names = ['sonic_NF_3_1', 'irga_NF_3_1', 'status_NF_0_3']
+    table_names = ['sonic_NF_300cm_1', 'irga_NF_300cm_1', 'status_NF_0cm_3']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions
@@ -108,7 +108,7 @@ def load_met30min(con, fns):
               netrad=re.compile('^SWD.*|^SWU.*|^LWD.*|^LWU.*|^Tb.*|^albedo.*|^Rn.*'),
               ppfd_in=re.compile('^PAR_up.*'))
 
-    table_names = ['hmp_NF_3_1', 'tsurf_NF_3_1', 'netrad_NF_3_1', 'ppfd_NF_3_1']
+    table_names = ['hmp_NF_300cm_1', 'tsurf_NF_300cm_1', 'netrad_NF_300cm_1', 'ppfd_NF_300cm_1']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions
@@ -122,10 +122,10 @@ def load_met30min(con, fns):
             "RH_3m_Min":"rh_min",
             "RH_3m_Max":"rh_max",
             "RH_3m_Std":"rh_std",
-            "SurfT_canopy_Avg":"tsurf_avg",
-            "SurfT_canopy_Min":"tsurf_min",
-            "SurfT_canopy_Max":"tsurf_max",
-            "SurfT_canopy_Std":"tsurf_std",
+            "SurfT_Avg":"tsurf_avg",
+            "SurfT_Min":"tsurf_min",
+            "SurfT_Max":"tsurf_max",
+            "SurfT_Std":"tsurf_std",
             "SBT_C_Avg":"sbt_avg",
             "SBT_C_Min":"sbt_min",
             "SBT_C_Max":"sbt_max",
@@ -164,7 +164,7 @@ def load_flux10Hz(con, fns):
         filenum, timestamp = fn_parts[4][4:], f'{fn_parts[5]}-{fn_parts[6]}-{fn_parts[7]} {fn_parts[8][:2]}:{fn_parts[8][2:]}'
         values = [(fn, filenum, timestamp,  'file')]
 
-        insert('fast_NF_3_1', values, con=con)
+        insert('fast_NF_300cm_1', values, con=con)
 
 def main():
     print(__name__, 'NF_3_EC_manager.py')

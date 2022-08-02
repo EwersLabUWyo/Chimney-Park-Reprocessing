@@ -115,7 +115,10 @@ def add_instrument(instr_model, site, height, rep, instr_sn, logger_sn, shortnam
     
     # create data table for instrument
     columns.update(utils_key_cols)
-    instr_table_name = f'{shortname}_{site}_{height}_{rep}'
+    sign = ['', '', 'neg']
+    # sonic_NF_1700cm_1
+    # hydraprobe_NF_neg50cm_1
+    instr_table_name = f'{shortname}_{site}_{sign[int(np.sign(height))]}{int(np.abs(height*100))}cm_{rep}'
     create_table(instr_table_name, columns, con)
     create_multi_index(instr_table_name, ['idx', 'timestamp', 'stat'], con)
     
@@ -124,13 +127,13 @@ def add_instrument(instr_model, site, height, rep, instr_sn, logger_sn, shortnam
         insert('units', [(instr_sn, var_name, unit, '') for var_name, unit in units.items()], con=con)
     
     # add metadata to logger table
-    insert('instruments', [(shortname, instr_model, site, height, rep, instr_sn, logger_sn, instr_table_name, comment)], con=con)
+    insert('instruments_lu', [(shortname, instr_model, site, height, rep, instr_sn, logger_sn, instr_table_name, comment)], con=con)
 
     if show:
         print(instr_table_name)
         display(pd.read_sql(f'SELECT * FROM {instr_table_name}', con))
         print('instruments')
-        display(pd.read_sql(f'SELECT * FROM instruments', con))
+        display(pd.read_sql(f'SELECT * FROM instruments_lu', con))
         print('units')
         display(pd.read_sql(f'SELECT * FROM units', con))
         
@@ -157,11 +160,11 @@ def add_logger(logger_model, site, rep, logger_sn, shortname, comment, con, show
     # print(logger_sn)
     
     # add metadata to logger table
-    insert('loggers', [(site, logger_model, logger_sn, shortname, comment)], con=con)
+    insert('loggers_lu', [(site, logger_model, logger_sn, shortname, comment)], con=con)
 
     if show:
         print('loggers')
-        display(pd.read_sql(f'SELECT * FROM loggers', con))
+        display(pd.read_sql(f'SELECT * FROM loggers_lu', con))
         
     return
 
@@ -192,6 +195,11 @@ def process_instructions(fns, rx, renaming_dict, table_names, con):
         # add an index column named "idx", since timestamps are not always unique.
         dfs = {instr:df.reset_index().rename({'index':'idx'}, axis='columns') for instr, df in dfs.items()}
 
+        # for k,v in cols.items():
+        #     print(k)
+        #     print(v)
+        #     print(df.columns)
+
         # loop through instruments and pivot longer by expanding on stat suffixes
         for instr, df in dfs.items():
             sep = '_'
@@ -203,13 +211,20 @@ def process_instructions(fns, rx, renaming_dict, table_names, con):
             # e.g. [timestamp, idx, u_avg, v_avg, u_std, v_std] --> [u, v]
             stubnames = list(set([col.split(sep)[0] for col in df.drop(i, axis='columns')]))
             
+            # print()
             # print(instr)
             # print('stubnames')
             # print(stubnames)
             # print('columns')
             # print(list(df.columns))
+            # print('tablename')
+            # print(table_names[instr])
+            # print('df')
+            # print(dfs[instr])
+
             # pivot wider, creating a 'stat' column
-            dfs[instr] = pd.wide_to_long(df=df, stubnames=stubnames, i=i, j=j, sep=sep, suffix='\w+').reset_index()
+            dfs[instr] = pd.wide_to_long(df=df, stubnames=stubnames, i=i, j=j, sep=sep, suffix='\w+')
+            dfs[instr].reset_index(inplace=True)
             # save to database
             dfs[instr].to_sql(table_names[instr], con, if_exists='append', index=False)
 

@@ -15,7 +15,7 @@ def initialize(con):
     # create logger table
     csr.execute(
         '''
-        CREATE TABLE IF NOT EXISTS loggers(
+        CREATE TABLE IF NOT EXISTS loggers_lu(
             site TEXT NOT NULL,
             logger_model TEXT NOT NULL,
             logger_sn INT NOT NULL,
@@ -25,16 +25,16 @@ def initialize(con):
         );
         '''
     )
-    csr.execute('''CREATE INDEX IF NOT EXISTS loggers_snidx ON loggers(logger_sn);''')
+    csr.execute('''CREATE INDEX IF NOT EXISTS loggers_snidx ON loggers_lu(logger_sn);''')
     
     # create instrument table
     csr.execute(
         '''
-        CREATE TABLE IF NOT EXISTS instruments(
+        CREATE TABLE IF NOT EXISTS instruments_lu(
             shortname TEXT NOT NULL,
             instr_model TEXT NOT NULL,
             site TEXT NOT NULL,
-            height INT NOT NULL,
+            height REAL NOT NULL,
             rep INT NOT NULL,
             instr_sn INT NOT NULL,
             logger_sn INT NOT NULL,
@@ -47,9 +47,9 @@ def initialize(con):
         );
         '''
     )
-    csr.execute('''CREATE INDEX IF NOT EXISTS instruments_snidx ON instruments(instr_sn);''')
-    csr.execute('''CREATE INDEX IF NOT EXISTS instruments_nameidx ON instruments(shortname);''')
-    csr.execute('''CREATE INDEX IF NOT EXISTS instruments_tableidx ON instruments(instr_table);''')
+    csr.execute('''CREATE INDEX IF NOT EXISTS instruments_snidx ON instruments_lu(instr_sn);''')
+    csr.execute('''CREATE INDEX IF NOT EXISTS instruments_nameidx ON instruments_lu(shortname);''')
+    csr.execute('''CREATE INDEX IF NOT EXISTS instruments_tableidx ON instruments_lu(instr_table);''')
     
     # units table
     csr.execute(
