@@ -23,21 +23,23 @@ def initialize(con, show=False):
     add_logger(logger_model=logger_model, site=site, rep=5, logger_sn=logger_sn, shortname='NF_Snow_1', comment='first snow logger at NF', con=con, show=show)
 
     # logger status
-    status_cols = dict(vlogger='REAL')
-    status_units = dict(vlogger='V+1')
+    status_cols = dict(vlogger_2_1_3='REAL')
+    status_units = dict(vlogger_2_1_3='V+1')
     add_instrument(shortname='status', site=site, height=0, instr_model=logger_model, rep=5, instr_sn=logger_sn,  comment='first snow logger at NF', columns=status_cols, units=status_units, logger_sn=logger_sn,  con=con, show=show)
     
     # snow pack temperature probes
-    snow_cols = {f'tsn{i}':'REAL' for i in range(1, 16)}
-    snow_cols.update({'tref':'REAL'})
+    snow_cols = {f'tsn_1_{i}_1':'REAL' for i in range(1, 16)}
+    snow_cols.update({'tref_2_1_1':'REAL'})
     snow_units = {k:'C+1' for k in snow_cols}
     snow_units = {k:'C+1' for k in snow_cols}
     add_instrument(shortname='snowtemp', site=site, height=0, instr_model='Type-T TC', rep=1, instr_sn=False,  comment='Pole A', columns=snow_cols, units=snow_units, logger_sn=logger_sn,  con=con, show=show)
+    snow_cols = {f'tsn_2_{i}_1':'REAL' for i in range(1, 16)}
+    snow_cols.update({'tref_2_1_1':'REAL'})
     add_instrument(shortname='snowtemp', site=site, height=0, instr_model='Type-T TC', rep=2, instr_sn=False,  comment='Pole B', columns=snow_cols, units=snow_units, logger_sn=logger_sn,  con=con, show=show)
 
     # snow depth pinger
-    depth_cols = dict(distto='REAL', tempcompdistto='REAL', dsnow='REAL', tref='REAL', quality='REAL')
-    depth_units = dict(distto='m+1', tempcompdistto='m+1', dsnow='m+1', tref='C+1', quality='')
+    depth_cols = dict(distto_1_1_1='REAL', tempcompdistto_1_1_1='REAL', dsnow_1_1_1='REAL', taref_1_1_1='REAL', quality_1_1_1='REAL')
+    depth_units = dict(distto_1_1_1='m+1', tempcompdistto_1_1_1='m+1', dsnow_1_1_1='m+1', taref_1_1_1='C+1', quality_1_1_1='')
     add_instrument(shortname='snowdepth', site=site, height=2, instr_model='SR50A', rep=1, instr_sn=False,  comment='Snow depth pinger', columns=depth_cols, units=depth_units, logger_sn=logger_sn,  con=con, show=show)    
 
     return
@@ -56,36 +58,36 @@ def load_snow30min(con, fns):
 
     # renaming/standardization instructions
     renaming_dict = {"TIMESTAMP":'timestamp',
-                    "DT_Avg": 'distto_avg',
-                    'Q_Avg': 'quality_avg',
-                    "TCDT_Avg": 'tempcompdistto_avg',
-                    "DBTCDT_Avg": 'dsnow_avg',
-                    "TA_Ref_Avg": 'tref_avg',
-                    "DT_Max": 'distto_max',
-                    'Q_Max': 'quality_max',
-                    "TCDT_Max": 'tempcompdistto_max',
-                    "DBTCDT_Max": 'dsnow_max',
-                    "TA_Ref_Max": 'tref_max',
-                    "DT_Min": 'distto_min',
-                    'Q_Min': 'quality_min',
-                    "TCDT_Min": 'tempcompdistto_min',
-                    "DBTCDT_Min": 'dsnow_min',
-                    "TA_Ref_Min": 'tref_min',
-                    "DT_Std": 'distto_std',
-                    'Q_Std': 'quality_std',
-                    "TCDT_Std": 'tempcompdistto_std',
-                    "DBTCDT_Std": 'dsnow_std',
-                    "TA_Ref_Std": 'tref_std'}
-    renaming_dict.update({f'Pack_C_Pole_A_{stat}': f'tsn1_{stat.lower()}' for stat in ['Avg', 'Max', 'Min', 'Std']})
-    renaming_dict.update({f'Pack_C_Pole_A_Avg({i})': f'tsn{i}_avg' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_A_Max({i})': f'tsn{i}_max' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_A_Min({i})': f'tsn{i}_min' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_A_Std({i})': f'tsn{i}_std' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_B_{stat}': f'tsn1_{stat.lower()}' for stat in ['Avg', 'Max', 'Min', 'Std']})
-    renaming_dict.update({f'Pack_C_Pole_B_Avg({i})': f'tsn{i}_avg' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_B_Max({i})': f'tsn{i}_max' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_B_Min({i})': f'tsn{i}_min' for i in range(1, 16)})
-    renaming_dict.update({f'Pack_C_Pole_B_Std({i})': f'tsn{i}_std' for i in range(1, 16)})
+                    "DT_Avg": 'distto_1_1_1-avg',
+                    'Q_Avg': 'quality_1_1_1-avg',
+                    "TCDT_Avg": 'tempcompdistto_1_1_1-avg',
+                    "DBTCDT_Avg": 'dsnow_1_1_1-avg',
+                    "TA_Ref_Avg": 'taref_1_1_1-avg',
+                    "DT_Max": 'distto_1_1_1-max',
+                    'Q_Max': 'quality_1_1_1-max',
+                    "TCDT_Max": 'tempcompdistto_1_1_1-max',
+                    "DBTCDT_Max": 'dsnow_1_1_1-max',
+                    "TA_Ref_Max": 'taref_1_1_1-max',
+                    "DT_Min": 'distto_1_1_1-min',
+                    'Q_Min': 'quality_1_1_1-min',
+                    "TCDT_Min": 'tempcompdistto_1_1_1-min',
+                    "DBTCDT_Min": 'dsnow_1_1_1-min',
+                    "TA_Ref_Min": 'taref_1_1_1-min',
+                    "DT_Std": 'distto_1_1_1-std',
+                    'Q_Std': 'quality_1_1_1-std',
+                    "TCDT_Std": 'tempcompdistto_1_1_1-std',
+                    "DBTCDT_Std": 'dsnow_1_1_1-std',
+                    "TA_Ref_Std": 'taref_1_1_1-std'}
+    renaming_dict.update({f'Pack_C_Pole_A_{stat}': f'tsn_1_1_1-{stat.lower()}' for stat in ['Avg', 'Max', 'Min', 'Std']})
+    renaming_dict.update({f'Pack_C_Pole_A_Avg({i})': f'tsn_1_{i}_1-avg' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_A_Max({i})': f'tsn_1_{i}_1-max' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_A_Min({i})': f'tsn_1_{i}_1-min' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_A_Std({i})': f'tsn_1_{i}_1-std' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_B_{stat}': f'tsn_2_1_1-_{stat.lower()}' for stat in ['Avg', 'Max', 'Min', 'Std']})
+    renaming_dict.update({f'Pack_C_Pole_B_Avg({i})': f'tsn_2_{i}_1-avg' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_B_Max({i})': f'tsn_2_{i}_1-max' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_B_Min({i})': f'tsn_2_{i}_1-min' for i in range(1, 16)})
+    renaming_dict.update({f'Pack_C_Pole_B_Std({i})': f'tsn_2_{i}_1-std' for i in range(1, 16)})
 
     process_instructions(fns, rx, renaming_dict, table_names, con)
 
@@ -103,7 +105,7 @@ def load_status30min(con, fns):
     # renaming/standardization instructions
     renaming_dict = {
             "TIMESTAMP":'timestamp',
-            'BattV_Min':'vlogger_min'}
+            'BattV_Min':'vlogger_2_1_3-min'}
 
     process_instructions(fns, rx, renaming_dict, table_names, con)
 

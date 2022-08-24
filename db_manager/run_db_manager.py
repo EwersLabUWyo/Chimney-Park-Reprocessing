@@ -21,107 +21,83 @@ import NF_Snow_Second_Manager as nfsnow2
 import NF_Soils_Manager as nfsoils
 import initialize
 
-sandbox_dir = Path('/Volumes/TempData/Bretfeld Mario/Chimney-Park-Reprocessing-Sandbox/')
-data_dir = Path('/Volumes/TempData/Bretfeld Mario/Chimney') / 'Data'
-wd = sandbox_dir = sandbox_dir/'Alex Work'
-db_fn = './cp.db'#Path('/Users/waldinian/Documents/CPTest6.db')
+data_dir = Path('/Volumes/TempData/Bretfeld Mario/Chimney-Park-Reprocessing-Sandbox/Data-by-logger/')
+# db_fn = ':memory:'
+db_fn = Path('../CP.db')
+db_fn.unlink()  
+
 
 with closing(sq.connect(db_fn)) as con:
     # initialize database
     initialize.initialize(con)
 
     # NF17 EC logger
+    print('Started NFEC17')
     nf17ec.initialize(con)
-    fns = list(data_dir.glob('BB-NF/EC/17m/20*/Converted/TOA5*Flux30Min.dat'))  # flux summaries
+    fns = list(data_dir.glob('NFEC17m/Flux30Min/Converted/TOA5*.dat'))  # flux summaries
     nf17ec.load_flux30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/EC/17m/20*/Converted/TOA5*Met30Min.dat'))  # met summaries
+    fns = list(data_dir.glob('NFEC17m/Met30Min/Converted/TOA5*.dat'))  # met summaries
     nf17ec.load_met30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/EC/17m/20*/Converted/TOA5*PRI*.dat'))  # pri
+    fns = list(data_dir.glob('NFEC17m/PRI/Converted/TOA5*.dat'))  # pri
     nf17ec.load_pri1min(con, fns)
-    fns = list(wd.glob('*/Chimney/EC Processing/BB-NF/Fast/17m/Converted/TOA5*10Hz*.dat'))  # fast flux
+    print('Searching for 10Hz files...')
+    fns = list(data_dir.glob('NFEC17m/Flux10Hz/Converted/TOA5*.dat'))  # fast flux
     nf17ec.load_flux10Hz(con, fns)
 
     # NF17 burba logger
+    print('Started NF17Burba')
     nf17burba.initialize(con)
-    fns = list(data_dir.glob('BB-NF/Snow/20*/23311Birba*.dat'))
+    fns = list(data_dir.glob('NFBurba17m/Burba/233*.dat'))
     nf17burba.load_burba30min(con, fns)
 
     # NF3 EC logger
+    print('Started NFEC3')
     nf3ec.initialize(con)
-    fns = list(data_dir.glob('BB-NF/EC/3m/20*/Converted/TOA5*Flux30Min.dat'))  # flux summaries
+    fns = list(data_dir.glob('NFEC3m/Flux30Min/Converted/TOA5*.dat'))  # flux summaries
     nf3ec.load_flux30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/EC/3m/20*/Converted/TOA5*Met30Min.dat'))  # met summaries
+    fns = list(data_dir.glob('NFEC3m/Met30Min/Converted/TOA5*.dat'))  # met summaries
     nf3ec.load_met30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/EC/3m/20*/Converted/TOA5*PRI*.dat'))  # pri
+    print('Searching for 10Hz files...')
+    fns = list(data_dir.glob('NFEC3m/Flux10Hz/Converted/TOA5*.dat'))  # flux 10hz
     nf3ec.load_flux10Hz(con, fns)
 
     # NF3 Sap logger
+    print('Started NFSap')
     nfsap.initialize(con)
-    fns = list(data_dir.glob('BB-NF/Sap Flow/*/BBNF_SapFlow*.dat'))
+    fns = list(data_dir.glob('NFSap/Sap/BBNF*.dat'))
     nfsap.load_sap30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/Sap Flow/*/PRI*2m*.dat')) 
+    fns = list(data_dir.glob('NFSap/Pri/PRI*.dat')) 
     nfsap.load_pri1min(con, fns)
 
     # NF3 Snow logger(s)
+    print('Started NFSnow')
     nfsnow1.initialize(con)
-    fns = list(data_dir.glob('BB-NF/Snow/*/3860Snow*.dat'))
+    fns = list(data_dir.glob('NFSnow/Snow/3860Snow*.dat'))
     nfsnow1.load_snow30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/Snow/*/3860Table2*.dat'))
+    fns = list(data_dir.glob('NFSnow/Batt/3860Table2*.dat'))
     nfsnow1.load_status30min(con, fns)
 
     # nfsnow2.initialize(con)
-    fns = list(data_dir.glob('BB-NF/Snow/*/CR1000 NF Snow_Snow.dat'))
-    fns += list(data_dir.glob('BB-NF/Snow/*/66463Data*.dat'))
-    fns += list(data_dir.glob('BB-NF/Snow/*/nf_snow_Snow*.dat'))
-    fns += list(data_dir.glob('BB-NF/Snow/*/66463Snowdepth_BBNF*.dat'))
+    fns = list(data_dir.glob('NFSnow/Snow/CR1000 NF Snow_Snow.dat'))
+    fns += list(data_dir.glob('NFSnow/Snow/66463Data*.dat'))
+    fns += list(data_dir.glob('NFSnow/Snow/nf_snow_Snow*.dat'))
+    fns += list(data_dir.glob('NFSnow/Snow/66463Snowdepth_BBNF*.dat'))
     nfsnow2.load_snow30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/Snow/*/CR1000 NF Snow_Table*.dat'))
-    fns += list(data_dir.glob('BB-NF/Snow/*/66463Table*.dat'))
-    fns += list(data_dir.glob('BB-NF/Snow/*/nf_snow_Table*.dat'))
+    fns = list(data_dir.glob('NFSnow/Batt/CR1000 NF Snow_Table*.dat'))
+    fns += list(data_dir.glob('NFSnow/Batt/66463Table*.dat'))
+    fns += list(data_dir.glob('NFSnow/Batt/nf_snow_Table*.dat'))
     nfsnow2.load_status30min(con, fns)
 
     # NF3 Soils logger(s)
-    # an issue here is that we get like a bajillion tables, one for each instrument
-    # a solution could be to take all replicate measurements and merge them
+    print('Started NFSoil')
     nfsoils.initialize(con)
-    fns = list(data_dir.glob('BB-NF/Soils/202*/Converted/TOA5_3864.CS616_30Min.dat'))
+    fns = list(data_dir.glob('NFSoil/TDR/Converted/TOA5*30M*.dat'))
     nfsoils.load_cs30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/Soils/202*/Converted/TOA5_3864.HydraProbe_30Min.dat'))
-    fns += list(data_dir.glob('BB-NF/Soils/202*/Converted/TOA5_3864.NRCS_zsStevens_30Min*.dat'))
+    fns = list(data_dir.glob('NFSoil/Hydra/Converted/TOA5*30M*.dat'))
+    fns += list(data_dir.glob('NFSoil/Stevens/202*/Converted/TOA5*30M*.dat'))
     nfsoils.load_hydraprobes30min(con, fns)
-    fns = list(data_dir.glob('BB-NF/Soils/202*/Converted/TOA5_3864.GsTs_30Min.dat'))
+    fns = list(data_dir.glob('NFSoil/GsTs//Converted/TOA5*30M*.dat'))
     nfsoils.load_gsts30min(con, fns)
-
-    # example: make the following table:
-    # ts instr_sn u_std u_avg
-    # to get an instrument from this table, you can do
-
-    # CREATE TABLE IF NOT EXISTS temp(instr_sn INT);
-    # 
-    # INSERT INTO 
-    #     temp 
-    # SELECT 
-    #     instr_sn 
-    # FROM 
-    #     instruments_lu 
-    # WHERE("site"="NF" 
-    #       AND "height"="17" 
-    #       AND "shortname"="sonic");
-    #
-    # SELECT
-    #     ts, 
-    #    u_avg)
-    # FROM 
-    #     u_table, 
-    #     temp 
-    # WHERE(u_table.instr_sn=temp.instr_sn); 
-
-    
-
-    # apply corrections
-    # corrections.lw(con)
-
-
 
 
 

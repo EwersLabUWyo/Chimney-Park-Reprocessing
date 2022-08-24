@@ -1,6 +1,7 @@
 import sqlite3 as sq
 from pathlib import Path
 from contextlib import closing
+import sys
 
 import numpy as np
 from tqdm import tqdm
@@ -11,6 +12,7 @@ import pyarrow.csv as pacsv
 
 # define some constants and such
 utils_key_cols = dict(idx='INT NOT NULL', timestamp='TEXT NOT NULL', stat='TEXT NOT NULL')
+
 
 def create_table(name, columns, con, primary=None, foreign=None):
     '''
@@ -54,13 +56,11 @@ def insert(name, values, columns=None, con=None):
     '''
     
     csr = con.cursor()
-
     # create a string '?, ?, ?, ...' 
     qmarks = ', '.join(['?']*len(values[0]))
     if columns is not None:
         # create a string 'col1, col2, col3, ...'
         columns = ', '.join(columns)
-        
         query = f'INSERT INTO {name}({columns}) VALUES({qmarks})'
     
     else:
@@ -68,8 +68,13 @@ def insert(name, values, columns=None, con=None):
     
     # print(query, '\n')
 
-    csr.executemany(query, values)
-    con.commit()
+    try:
+        csr.executemany(query, values)
+        con.commit()
+    except sq.InterfaceError as err:
+        print(values[:10])
+        print(err)
+        sys.exit(0)
     
     return
 
@@ -136,6 +141,58 @@ def add_instrument(instr_model, site, height, rep, instr_sn, logger_sn, shortnam
         display(pd.read_sql(f'SELECT * FROM instruments_lu', con))
         print('units')
         display(pd.read_sql(f'SELECT * FROM units', con))
+
+    
+def add_instrument(instr_model, site, height, rep, instr_sn, logger_sn, shortname, comment, columns, units, con, show=False):
+    '''
+    Add a new instrument. This will create a  new data table for this instrument, record instrument metadata in the associated instrument metadata table, and add units to a unit table.
+    instr_model: str, model name
+    site: str, site name (without height)
+    rep: int, indicate uniqueness of this instrument/type of instrument
+    instr_sn: int or bool, if not given, a unique negative integer will be chosen.
+    logger_sn: int, serial number of logger attached to instrument
+    shortname: str, should be short and convey instrument type. examples: irga, son, irgason, thp, soiltdr
+    columns: dict of {variable:datatype} for data columns, not including timestamp or record numbers
+    units: dict of {variable:units} or bool for data columns, not including timestamp or record numbers. Use the format <unit>±n<unit>±m, for example m+1s-1, or C+1. Set 'False' to not add units.
+    comment: str, any additional info about the instrument.
+    con: sqlite3.connect(), a connection to the sqlite3 database
+    show: bool (default False), whether to display the created/modified tables.
+    '''
+    
+    # print(len(columns))
+    csr = con.cursor()
+    
+    # get serial numbers: assign instr serial number randomely if not given
+    if not instr_sn:
+        instr_sn = np.random.randint(-1e7, 0)
+    
+
+    columns_old = columns.copy()
+    columns = utils_key_cols.copy()
+    columns.update({col:datatype for col, datatype in columns_old.items()})
+
+    # create data table for instrument
+    sign = ['', '', 'neg']
+    # sonic_NF_1700cm_1
+    # hydraprobe_NF_neg50cm_1
+    instr_table_name = f'{shortname}_{site}_{sign[int(np.sign(height))]}{int(np.abs(height*100))}cm_{rep}'
+    create_table(instr_table_name, columns, con)
+    create_multi_index(instr_table_name, ['idx', 'timestamp'], con)
+    
+    # create/update units table
+    if units:
+        insert('units_lu', [(instr_sn, var_name, unit, '') for var_name, unit in units.items()], con=con)
+    
+    # add metadata to logger table
+    insert('instruments_lu', [(shortname, instr_model, site, height, rep, instr_sn, logger_sn, instr_table_name, comment)], con=con)
+
+    if show:
+        print(instr_table_name)
+        display(pd.read_sql(f'SELECT * FROM {instr_table_name}', con))
+        print('instruments')
+        display(pd.read_sql(f'SELECT * FROM instruments_lu', con))
+        print('units')
+        display(pd.read_sql(f'SELECT * FROM units', con))
         
     return
 
@@ -157,27 +214,26 @@ def add_logger(logger_model, site, rep, logger_sn, shortname, comment, con, show
     # get serial numbers: assign instr serial number randomely if not given
     if not logger_sn:
         logger_sn = np.random.randint(-1e7, 0)
-    # print(logger_sn)
     
     # add metadata to logger table
-    insert('loggers_lu', [(site, logger_model, logger_sn, shortname, comment)], con=con)
 
-    if show:
-        print('loggers')
-        display(pd.read_sql(f'SELECT * FROM loggers_lu', con))
+    insert('loggers_lu', [(site, logger_model, logger_sn, shortname, comment)], con=con)
         
     return
 
 def process_instructions(fns, rx, renaming_dict, table_names, con):
     '''given a list of file names and a set of subsetting/renaming instructions, process the given files and upload them to the database'''
+    
+    csr = con.cursor()
+
     default_cols = ['TIMESTAMP']
 
     pbar = tqdm(fns)
     for fn in pbar:
         fn = Path(fn)
-        pbar.set_description(f'Processing {"/".join(fn.parts[-6:])}')
+        pbar.set_description(f'Processing {fn.name:50s}')#"/".join(fn.parts[-6:])}')
         
-        # record TOA5 header data
+        # record TOA5 header data if a new file type is detected
         with open(fn, 'r') as f:
             header = f.readline().strip('"\n').split('","')
             f.readline(), f.readline(), f.readline()
@@ -185,10 +241,9 @@ def process_instructions(fns, rx, renaming_dict, table_names, con):
         header += [timestamp]
         header = [tuple(header)]
         insert('slow_headers', header, con=con)
-        
-        # read in file, skipping metadata rows
-        df = pd.read_csv(fn, skiprows=[0, 2, 3])
 
+        # read in file, skipping metadata rows
+        df = pd.read_csv(fn, skiprows=[0, 2, 3], low_memory=False)
         # apply regex filter: first find columns, then subset by those columns and rename to standard names
         cols = {instr:default_cols + list(filter(r.match, list(df.columns))) for instr, r in rx.items()}
         dfs = {instr:df[col].rename(renaming_dict, axis='columns') for instr, col in cols.items()}  # dict of dataframes, with instruments as keys
@@ -202,7 +257,7 @@ def process_instructions(fns, rx, renaming_dict, table_names, con):
 
         # loop through instruments and pivot longer by expanding on stat suffixes
         for instr, df in dfs.items():
-            sep = '_'
+            sep = '-'
             suffix = '\w+'
             i = ['timestamp', 'idx']
             j = 'stat'

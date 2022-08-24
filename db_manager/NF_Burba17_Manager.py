@@ -23,11 +23,11 @@ def initialize(con, show=False):
 
     # logger status
     # logger status
-    status_cols = dict(vlogger='REAL', tlogger='REAL')
-    status_units = dict(vlogger='V+1', tlogger='C+1')
+    status_cols = dict(vlogger_1_1_2='REAL', tlogger_1_1_2='REAL')
+    status_units = dict(vlogger_1_1_2='V+1', tlogger_1_1_2='C+1')
     add_instrument(shortname='status', site=site, height=0, instr_model='CR1000X', rep=1, instr_sn=logger_sn,  comment='NF Burba 17m logger', columns=status_cols, units=status_units, logger_sn=logger_sn,  con=con, show=show)
     
-    burba_cols = dict(body='REAL', sparlow='REAL', sparmid='REAL', sparhigh='REAL', tref='REAL')
+    burba_cols = dict(body_1_1_1='REAL', sparlow_1_1_1='REAL', sparmid_1_1_1='REAL', sparhigh_1_1_1='REAL', tref_1_1_1='REAL')
     burba_units = {k:'C+1' for k in burba_cols}
     add_instrument(shortname='burba', site=site, height=17, instr_model='Type-T TC', rep=1, instr_sn=False,  comment='', columns=burba_cols, units=burba_units, logger_sn=logger_sn,  con=con, show=show)
 
@@ -42,30 +42,30 @@ def load_burba30min(con, fns):
 
     # renaming/standardization instructions
     renaming_dict = {"TIMESTAMP":'timestamp',
-                    "PTemp_C_Avg":'tlogger_avg',
-                    "PTemp_C_Max":'tlogger_max',
-                    "PTemp_C_Min":'tlogger_min',
-                    "PTemp_C_Std":'tlogger_std',
-                    "Birba_T_C_Avg(1)":'body_avg',
-                    "Birba_T_C_Avg(2)":'sparlow_avg',
-                    "Birba_T_C_Avg(3)":'sparmid_avg',
-                    "Birba_T_C_Avg(4)":'sparhigh_avg',
-                    "Birba_T_C_Max(1)":'body_max',
-                    "Birba_T_C_Max(2)":'sparlow_max',
-                    "Birba_T_C_Max(3)":'sparmid_max',
-                    "Birba_T_C_Max(4)":'sparhigh_max',
-                    "Birba_T_C_Min(1)":'body_min',
-                    "Birba_T_C_Min(2)":'sparlow_min',
-                    "Birba_T_C_Min(3)":'sparmid_min',
-                    "Birba_T_C_Min(4)":'sparhigh_min',
-                    "Birba_T_C_Std(1)":'body_std',
-                    "Birba_T_C_Std(2)":'sparlow_std',
-                    "Birba_T_C_Std(3)":'sparmid_std',
-                    "Birba_T_C_Std(4)":'sparhigh_std',
-                    "TC_MUX_Ref_T_C_Avg":'tref_avg',
-                    "TC_MUX_Ref_T_C_Max":'tref_max',
-                    "TC_MUX_Ref_T_C_Min":'tref_min',
-                    "TC_MUX_Ref_T_C_Std":'tref_std'}
+                    "PTemp_C_Avg":'tlogger_1_1_1-avg',
+                    "PTemp_C_Max":'tlogger_1_1_1-max',
+                    "PTemp_C_Min":'tlogger_1_1_1-min',
+                    "PTemp_C_Std":'tlogger_1_1_1-std',
+                    "Birba_T_C_Avg(1)":'body_1_1_1-avg',
+                    "Birba_T_C_Avg(2)":'sparlow_1_1_1-avg',
+                    "Birba_T_C_Avg(3)":'sparmid_1_1_1-avg',
+                    "Birba_T_C_Avg(4)":'sparhigh_1_1_1-avg',
+                    "Birba_T_C_Max(1)":'body_1_1_1-max',
+                    "Birba_T_C_Max(2)":'sparlow_1_1_1-max',
+                    "Birba_T_C_Max(3)":'sparmid_1_1_1-max',
+                    "Birba_T_C_Max(4)":'sparhigh_1_1_1-max',
+                    "Birba_T_C_Min(1)":'body_1_1_1-min',
+                    "Birba_T_C_Min(2)":'sparlow_1_1_1-min',
+                    "Birba_T_C_Min(3)":'sparmid_1_1_1-min',
+                    "Birba_T_C_Min(4)":'sparhigh_1_1_1-min',
+                    "Birba_T_C_Std(1)":'body_1_1_1-std',
+                    "Birba_T_C_Std(2)":'sparlow_1_1_1-std',
+                    "Birba_T_C_Std(3)":'sparmid_1_1_1-std',
+                    "Birba_T_C_Std(4)":'sparhigh_1_1_1-std',
+                    "TC_MUX_Ref_T_C_Avg":'tref_1_1_1-avg',
+                    "TC_MUX_Ref_T_C_Max":'tref_1_1_1-max',
+                    "TC_MUX_Ref_T_C_Min":'tref_1_1_1-min',
+                    "TC_MUX_Ref_T_C_Std":'tref_1_1_1-std'}
 
     process_instructions(fns, rx, renaming_dict, table_names, con)
 

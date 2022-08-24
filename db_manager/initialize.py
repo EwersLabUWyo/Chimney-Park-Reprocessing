@@ -54,7 +54,7 @@ def initialize(con):
     # units table
     csr.execute(
         '''
-        CREATE TABLE IF NOT EXISTS units(
+        CREATE TABLE IF NOT EXISTS units_lu(
             instr_sn TEXT NOT NULL,
             variable TEXT NOT NULL,
             units TEXT NOT NULL,
@@ -66,7 +66,7 @@ def initialize(con):
             )
         '''
     )
-    csr.execute('''CREATE INDEX IF NOT EXISTS units_multidx ON units(instr_sn, variable)''')
+    csr.execute('''CREATE INDEX IF NOT EXISTS units_multidx ON units_lu(instr_sn, variable)''')
 
     # slow file metadata
     csr.execute(

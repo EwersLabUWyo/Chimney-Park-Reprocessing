@@ -1,0 +1,4 @@
+date,time,master_sonic_height,co2_irga_vertical_separation,h2o_irga_vertical_separation,canopy_height
+2021-07-06,04:00,17.7,-1700,-1700,17
+2021-07-06,08:13,100,-6,-6,50
+2021-07-06,20:30,1,32,32,0.5
