@@ -57,7 +57,9 @@ def initialize(con, show=False):
 
     # Fast (10Hz) files
     fast_cols = dict(file='TEXT')
-    create_table('fast_NF_300cm_1', {'timestamp':'TEXT', 'fn':'TEXT'}, con)
+    fast_units = dict(file='None')
+    add_instrument(shortname='fast', site=site, height=3, rep=1, instr_sn=False, instr_model='1xCSAT3,1xLI7500', logger_sn=logger_sn, comment='10Hz files from the NF 3m tower', columns=fast_cols, units=fast_units, con=con, show=show)
+
 
 
 def load_flux30min(con, fns):
@@ -157,13 +159,12 @@ def load_met30min(con, fns):
     return
 
 def load_flux10Hz(con, fns):
+    
     timestamps = [f'{fn.stem[-15:-11]}-{fn.stem[-10:-8]}-{fn.stem[-7:-5]} {fn.stem[-4:-2]}:{fn.stem[-2:]}' for fn in fns]
-    values = [(str(timestamp), str(fn)) for timestamp, fn in zip(timestamps, fns)]
+    values = [(i, str(timestamp), 'file', str(fn)) for i, timestamp, fn in zip(range(len(timestamps)), timestamps, fns)]
     # print(values[:10])
     # input()
-    # Fast (10Hz) files
     insert('fast_NF_300cm_1', values, con=con)
-
 def main():
     print(__name__, 'NF_3_EC_manager.py')
 

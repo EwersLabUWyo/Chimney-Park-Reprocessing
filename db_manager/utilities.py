@@ -83,7 +83,7 @@ def create_multi_index(name, columns, con):
     
     csr = con.cursor()
 
-    columns = ', '.join(columns)
+    columns = ' ASC, '.join(columns)
     query = f'CREATE INDEX IF NOT EXISTS {name}_multidx ON {name}({columns});'
     # print(query, '\n')
     
@@ -243,7 +243,11 @@ def process_instructions(fns, rx, renaming_dict, table_names, con):
         insert('slow_headers', header, con=con)
 
         # read in file, skipping metadata rows
-        df = pd.read_csv(fn, skiprows=[0, 2, 3], low_memory=False)
+        df = pd.read_csv(fn, skiprows=[0, 2, 3], low_memory=False, na_values = ['"NAN"', 'NAN', '-9999'])
+
+
+
+
         # apply regex filter: first find columns, then subset by those columns and rename to standard names
         cols = {instr:default_cols + list(filter(r.match, list(df.columns))) for instr, r in rx.items()}
         dfs = {instr:df[col].rename(renaming_dict, axis='columns') for instr, col in cols.items()}  # dict of dataframes, with instruments as keys
@@ -278,9 +282,55 @@ def process_instructions(fns, rx, renaming_dict, table_names, con):
             # print(dfs[instr])
 
             # pivot wider, creating a 'stat' column
-            dfs[instr] = pd.wide_to_long(df=df, stubnames=stubnames, i=i, j=j, sep=sep, suffix='\w+')
+            df = pd.wide_to_long(df=df, stubnames=stubnames, i=i, j=j, sep=sep, suffix='\w+')
+            dfs[instr] = df
             dfs[instr].reset_index(inplace=True)
+
+            
+
             # save to database
             dfs[instr].to_sql(table_names[instr], con, if_exists='append', index=False)
 
+
     return
+
+def remove_duplicates(con):
+
+    # retrieve the instruments lookup table
+    instr_tables = pd.read_sql('SELECT instr_table FROM instruments_lu', con).values
+
+    pbar = tqdm(instr_tables)
+    for table in pbar:
+        table = table[0]
+        df = (pd.read_sql(f'SELECT * FROM {table}', con, parse_dates=['timestamp'])  # read in the table
+              .replace(['NAN'], [np.nan])  # parse nans in case none were parsed before
+              .sort_values('timestamp'))  # sort by timestamp
+
+        l1 = len(df)
+
+        # step 1: identify rows that are exact copies of each other and remove the duplicates
+        df_datadupetag = (df.drop(columns=['idx', 'stat', 'timestamp'])  # remove the index/key columns. Only look at the entered data
+                      .duplicated())  # identify duplicates in the data
+        # select those rows which are not flagged as duplicates
+        df = df[~df_datadupetag]
+
+        # step 2: Look for rows with duplicates in both timestamp and stat
+        df_tsdupetag = (df.drop(columns=['idx'])  
+                        .duplicated(subset=['timestamp', 'stat'], keep=False))
+        # select those rows which are not flagged as duplicates
+        df = df[~df_tsdupetag]
+
+        l2 = len(df)
+
+
+        pbar.set_description(f'Removed {(l1-l2)/(l1 + 1)*100:.2f}% of {table}')
+
+        if l1==0: print(f'{table} was empty!')
+
+        # clear original table
+        csr = con.cursor()
+        csr.execute(f'DELETE FROM {table}')
+        con.commit()
+
+        # write new table
+        df.to_sql(name=table, con=con, if_exists='append', index=False)

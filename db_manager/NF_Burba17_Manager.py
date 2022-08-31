@@ -25,7 +25,7 @@ def initialize(con, show=False):
     # logger status
     status_cols = dict(vlogger_1_1_2='REAL', tlogger_1_1_2='REAL')
     status_units = dict(vlogger_1_1_2='V+1', tlogger_1_1_2='C+1')
-    add_instrument(shortname='status', site=site, height=0, instr_model='CR1000X', rep=1, instr_sn=logger_sn,  comment='NF Burba 17m logger', columns=status_cols, units=status_units, logger_sn=logger_sn,  con=con, show=show)
+    add_instrument(shortname='status', site=site, height=0, instr_model='CR1000X', rep=2, instr_sn=logger_sn,  comment='NF Burba 17m logger', columns=status_cols, units=status_units, logger_sn=logger_sn,  con=con, show=show)
     
     burba_cols = dict(body_1_1_1='REAL', sparlow_1_1_1='REAL', sparmid_1_1_1='REAL', sparhigh_1_1_1='REAL', tref_1_1_1='REAL')
     burba_units = {k:'C+1' for k in burba_cols}
@@ -42,10 +42,10 @@ def load_burba30min(con, fns):
 
     # renaming/standardization instructions
     renaming_dict = {"TIMESTAMP":'timestamp',
-                    "PTemp_C_Avg":'tlogger_1_1_1-avg',
-                    "PTemp_C_Max":'tlogger_1_1_1-max',
-                    "PTemp_C_Min":'tlogger_1_1_1-min',
-                    "PTemp_C_Std":'tlogger_1_1_1-std',
+                    "PTemp_C_Avg":'tlogger_1_1_2-avg',
+                    "PTemp_C_Max":'tlogger_1_1_2-max',
+                    "PTemp_C_Min":'tlogger_1_1_2-min',
+                    "PTemp_C_Std":'tlogger_1_1_2-std',
                     "Birba_T_C_Avg(1)":'body_1_1_1-avg',
                     "Birba_T_C_Avg(2)":'sparlow_1_1_1-avg',
                     "Birba_T_C_Avg(3)":'sparmid_1_1_1-avg',

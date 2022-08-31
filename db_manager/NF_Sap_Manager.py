@@ -51,7 +51,7 @@ def load_sap30min(con, fns):
     # mush into on dictionary
     rx.update(rx2)
 
-    table_names = [f'sapflow_NF_100cm_{rep}' for rep in range(1, 11)] + ['status_NF_0cm_4']
+    table_names = [f'picosap_NF_100cm_{rep}' for rep in range(1, 11)] + ['status_NF_0cm_4']
     table_names = {instr:name for instr, name in zip(rx, table_names)}
 
     # renaming/standardization instructions

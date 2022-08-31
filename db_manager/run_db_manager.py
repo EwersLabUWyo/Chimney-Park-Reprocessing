@@ -23,7 +23,7 @@ import initialize
 
 data_dir = Path('/Volumes/TempData/Bretfeld Mario/Chimney-Park-Reprocessing-Sandbox/Data-by-logger/')
 # db_fn = ':memory:'
-db_fn = Path('../CP.db')
+db_fn = Path('../CP_backup.db')
 db_fn.unlink()  
 
 
@@ -98,6 +98,33 @@ with closing(sq.connect(db_fn)) as con:
     nfsoils.load_hydraprobes30min(con, fns)
     fns = list(data_dir.glob('NFSoil/GsTs//Converted/TOA5*30M*.dat'))
     nfsoils.load_gsts30min(con, fns)
+
+
+    remove_duplicates(con)
+
+    # corrections.lw(con)
+
+    # # remove duplicate rows
+    # # loop through data tables
+    # status_lu = pd.read_sql('SELECT * FROM instruments_lu', con)
+    # pbar = tqdm(status_lu.instr_table)
+    # for table in pbar:
+    #     # read into pandas
+    #     df = pd.read_sql(f'SELECT * FROM {table}', con)
+    #     dfl1 = len(df)
+    #     # select non-duplicates
+    #     df = df[~df.duplicated(keep=False)]
+    #     dfl2 = len(df)
+    #     pbar.set_description(f'Removed {(dfl1 - dfl2 + 1)/(dfl1 + 1)*100:.2f}% from {table} as duplicates')
+    #     # clear original table
+    #     csr = con.cursor()
+    #     csr.execute(f'DELETE FROM {table}')
+    #     con.commit()
+    #     # write new table
+    #     df.to_sql(name=table, con=con, if_exists='append', index=False)
+
+
+
 
 
 

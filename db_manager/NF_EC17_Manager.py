@@ -27,10 +27,10 @@ def initialize(con, show=False):
     
     # 17m +7m sonics
     sonic_cols = dict(u_1_1_1='REAL', v_1_1_1='REAL', w_1_1_1='REAL', tsonic_1_1_1='REAL', diagsonic_1_1_1='INT')
-    sonic_cols.update(dict(u_1_2_1='REAL', v_1_2_1='REAL', w_1_2_1='REAL', tsonic_1_2_1='REAL', diagsonic_1_2_1='INT'))
     sonic_units = dict(u_1_1_1='m+1s-1', v_1_1_1='m+1s-1', w_1_1_1='m+1s-1', tsonic_1_1_1='C+1', diagsonic_1_1_1='')
-    sonic_units.update(dict(u_1_2_1='m+1s-1', v_1_2_1='m+1s-1', w_1_2_1='m+1s-1', tsonic_1_2_1='C+1', diagsonic_1_2_1=''))
     add_instrument(shortname='sonic',   site=site, height=17, instr_model='CSAT3', instr_sn=False, comment='', columns=sonic_cols,   units=sonic_units,   logger_sn=logger_sn,  con=con, show=show, rep=1)
+    sonic_cols = dict(u_1_2_1='REAL', v_1_2_1='REAL', w_1_2_1='REAL', tsonic_1_2_1='REAL', diagsonic_1_2_1='INT')
+    sonic_units = dict(u_1_2_1='m+1s-1', v_1_2_1='m+1s-1', w_1_2_1='m+1s-1', tsonic_1_2_1='C+1', diagsonic_1_2_1='')
     add_instrument(shortname='sonic',   site=site, height=7,  instr_model='CSAT3', instr_sn=False, comment='', columns=sonic_cols,   units=sonic_units,   logger_sn=logger_sn,  con=con, show=show, rep=1)
     
     # 17m IRGA
@@ -52,12 +52,12 @@ def initialize(con, show=False):
     add_instrument(shortname='ppfd',  site=site, height=17, instr_model='LI190SB',  rep=2, instr_sn=35376, comment='downward-facing', columns=parout_cols,    units=parout_units,    logger_sn=logger_sn,  con=con, show=show)
 
     # HMP & RTD
-    hmp_cols = {f'ta_1_{i}_1':'REAL' for i in range(1, 4)}
-    hmp_cols.update({f'rh_1_{i}_1':'REAL' for i in range(1, 4)})
-    hmp_units = {f'ta_1_{i}_1':'C+1' for i in range(1, 4)}
-    hmp_units.update({f'rh_1_{i}_1':'%+1' for i in range(1, 4)})
     for i, height in zip(range(1, 4), [17, 12, 7]):
-        add_instrument(shortname='hmp', site=site, height=17, instr_model='HMP', rep=1, instr_sn=False, comment='ta/rh', columns=hmp_cols, units=hmp_units, logger_sn=logger_sn, con=con, show=show)
+        hmp_cols = {f'ta_1_{i}_1':'REAL'}
+        hmp_cols.update({f'rh_1_{i}_1':'REAL'})
+        hmp_units = {f'ta_1_{i}_1':'C+1'}
+        hmp_units.update({f'rh_1_{i}_1':'%+1'})
+        add_instrument(shortname='hmp', site=site, height=height, instr_model='HMP', rep=1, instr_sn=False, comment='ta/rh', columns=hmp_cols, units=hmp_units, logger_sn=logger_sn, con=con, show=show)
     
     # PRI sensor(s?)
     pri_cols = dict(pri_1_1_1='REAL', indup_1_1_1='REAL', inddown_1_1_1='REAL', up532_1_1_1='REAL', down532_1_1_1='REAL', up570_1_1_1='REAL', down570_1_1_1='REAL')
@@ -80,8 +80,9 @@ def initialize(con, show=False):
 
     # Fast (10Hz) files
     fast_cols = dict(file='TEXT')
-    create_table('fast_NF_1700cm_1', {'timestamp':'TEXT', 'fn':'TEXT'}, con)
-    # add_instrument(shortname='fast', site=site, height=17, rep=1, instr_sn=False, instr_model='2xCSAT3,1xLI7500', logger_sn=logger_sn, comment='10Hz files from the NF tall tower', columns=fast_cols, units=False, con=con, show=show)
+    fast_units = dict(file='None')
+    # create_table('fast_NF_1700cm_1', {'timestamp':'TEXT', 'fn':'TEXT'}, con)
+    add_instrument(shortname='fast', site=site, height=17, rep=1, instr_sn=False, instr_model='2xCSAT3,1xLI7500', logger_sn=logger_sn, comment='10Hz files from the NF tall tower', columns=fast_cols, units=fast_units, con=con, show=show)
 
 def load_flux30min(con, fns):
     # read in 30-minute flux summaries and add them to the database
@@ -273,7 +274,7 @@ def load_flux10Hz(con, fns):
 
 
     timestamps = [f'{fn.stem[-15:-11]}-{fn.stem[-10:-8]}-{fn.stem[-7:-5]} {fn.stem[-4:-2]}:{fn.stem[-2:]}' for fn in fns]
-    values = [(str(timestamp), str(fn)) for timestamp, fn in zip(timestamps, fns)]
+    values = [(i, str(timestamp), 'file', str(fn)) for i, timestamp, fn in zip(range(len(timestamps)), timestamps, fns)]
     # print(values[:10])
     # input()
     insert('fast_NF_1700cm_1', values, con=con)
